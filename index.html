@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>AWS × EEE | Engineering Cloud Course</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+  <!-- ================= SIDEBAR ================= -->
+
+  <aside class="sidebar" id="sidebar">
+
+    <div class="brand">
+
+      <div class="aws-logo">AWS</div>
+
+      <div>
+        <h2>AWS × EEE</h2>
+        <span>Engineering Cloud Course</span>
+      </div>
+
+    </div>
+
+    <div class="course-progress">
+
+      <div class="progress-heading">
+        <span>Course Progress</span>
+        <strong id="progressText">0%</strong>
+      </div>
+
+      <div class="progress-bar">
+        <div id="progressBar"></div>
+      </div>
+
+      <small id="progressInfo">
+        Start your learning journey
+      </small>
+
+    </div>
+
+    <div class="nav-title">
+      COURSE CONTENT
+    </div>
+
+    <nav id="moduleNav"></nav>
+
+    <div class="sidebar-bottom">
+
+      <strong>Cloud • IoT • EEE</strong>
+
+      <p>
+        From Engineering Problems
+        to Cloud Solutions
+      </p>
+
+    </div>
+
+  </aside>
+
+
+  <!-- ================= MAIN ================= -->
+
+  <main class="main">
+
+    <header class="topbar">
+
+      <button
+        class="menu-btn"
+        id="menuBtn">
+        ☰
+      </button>
+
+      <div class="breadcrumb">
+        AWS × EEE
+        <span>/</span>
+        <strong id="breadcrumbText">
+          Welcome
+        </strong>
+      </div>
+
+      <button
+        class="reset-btn"
+        id="resetBtn">
+        Reset Progress
+      </button>
+
+    </header>
+
+
+    <!-- HERO -->
+
+    <section
+      class="hero"
+      id="hero">
+    </section>
+
+
+    <!-- COURSE CONTENT -->
+
+    <section id="courseContent"></section>
+
+
+    <!-- NAVIGATION -->
+
+    <div class="course-navigation">
+
+      <button
+        id="previousBtn"
+        class="previous-btn">
+
+        ← Previous
+
+      </button>
+
+      <div id="pageNumber">
+        Module 1
+      </div>
+
+      <button
+        id="nextBtn"
+        class="next-btn">
+
+        Next →
+
+      </button>
+
+    </div>
+
+  </main>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
