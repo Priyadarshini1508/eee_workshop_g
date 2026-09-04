@@ -1,141 +1,4910 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>AWS × EEE | Engineering Cloud Course</title>
+    <title>AWS × EEE | Interactive Workshop Workbook</title>
 
-  <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="app">
+<!-- =========================================================
+     MOBILE TOP BAR
+========================================================= -->
 
-  <!-- ================= SIDEBAR ================= -->
+<header class="mobile-header">
+    <button id="menuBtn" class="menu-btn">☰</button>
 
-  <aside class="sidebar" id="sidebar">
+    <div>
+        <div class="mobile-brand">A×E</div>
+        <div class="mobile-title">AWS × EEE</div>
+    </div>
+</header>
 
-    <div class="brand">
 
-      <div class="aws-logo">AWS</div>
+<!-- =========================================================
+     SIDEBAR
+========================================================= -->
 
-      <div>
-        <h2>AWS × EEE</h2>
-        <span>Engineering Cloud Course</span>
-      </div>
+<aside class="sidebar" id="sidebar">
+
+    <div class="brand-area">
+
+        <div class="brand-logo">
+            A<span>×</span>E
+        </div>
+
+        <div>
+            <h1>AWS × EEE</h1>
+            <p>Interactive Workshop</p>
+        </div>
 
     </div>
 
-    <div class="course-progress">
 
-      <div class="progress-heading">
-        <span>Course Progress</span>
-        <strong id="progressText">0%</strong>
-      </div>
+    <div class="sidebar-workshop">
 
-      <div class="progress-bar">
-        <div id="progressBar"></div>
-      </div>
+        <span class="small-label">1-DAY HANDS-ON</span>
 
-      <small id="progressInfo">
-        Start your learning journey
-      </small>
+        <h2>
+            From Engineering Problems
+            <span>to Cloud Solutions</span>
+        </h2>
 
-    </div>
-
-    <div class="nav-title">
-      COURSE CONTENT
-    </div>
-
-    <nav id="moduleNav"></nav>
-
-    <div class="sidebar-bottom">
-
-      <strong>Cloud • IoT • EEE</strong>
-
-      <p>
-        From Engineering Problems
-        to Cloud Solutions
-      </p>
+        <div class="self-learning">
+            📘
+            <div>
+                <strong>Self-learning mode</strong>
+                <p>
+                    Read the explanation, follow the AWS steps,
+                    inspect the reference image, then continue.
+                </p>
+            </div>
+        </div>
 
     </div>
 
-  </aside>
+
+    <div class="sidebar-title">
+        WORKSHOP CONTENT
+    </div>
 
 
-  <!-- ================= MAIN ================= -->
+    <nav id="moduleNav">
 
-  <main class="main">
+        <button class="nav-item active" data-module="0">
+            <span>01</span>
+            <div>
+                <strong>Cloud Fundamentals</strong>
+                <small>Cloud + AWS basics</small>
+            </div>
+        </button>
 
-    <header class="topbar">
+        <button class="nav-item" data-module="1">
+            <span>02</span>
+            <div>
+                <strong>AWS × EEE</strong>
+                <small>Engineering applications</small>
+            </div>
+        </button>
 
-      <button
-        class="menu-btn"
-        id="menuBtn">
-        ☰
-      </button>
+        <button class="nav-item" data-module="2">
+            <span>03</span>
+            <div>
+                <strong>IoT Core + MQTT</strong>
+                <small>Connect devices</small>
+            </div>
+        </button>
 
-      <div class="breadcrumb">
-        AWS × EEE
-        <span>/</span>
-        <strong id="breadcrumbText">
-          Welcome
+        <button class="nav-item" data-module="3">
+            <span>04</span>
+            <div>
+                <strong>Amazon SQS</strong>
+                <small>Message queues</small>
+            </div>
+        </button>
+
+        <button class="nav-item" data-module="4">
+            <span>05</span>
+            <div>
+                <strong>AWS Lambda</strong>
+                <small>Serverless processing</small>
+            </div>
+        </button>
+
+        <button class="nav-item" data-module="5">
+            <span>06</span>
+            <div>
+                <strong>Amazon S3</strong>
+                <small>Cloud storage</small>
+            </div>
+        </button>
+
+        <button class="nav-item" data-module="6">
+            <span>07</span>
+            <div>
+                <strong>Amazon SNS</strong>
+                <small>Notifications</small>
+            </div>
+        </button>
+
+        <button class="nav-item" data-module="7">
+            <span>08</span>
+            <div>
+                <strong>CloudWatch</strong>
+                <small>Monitoring</small>
+            </div>
+        </button>
+
+        <button class="nav-item" data-module="8">
+            <span>09</span>
+            <div>
+                <strong>Amazon EC2</strong>
+                <small>Virtual servers</small>
+            </div>
+        </button>
+
+        <button class="nav-item" data-module="9">
+            <span>10</span>
+            <div>
+                <strong>System Integration</strong>
+                <small>Complete architecture</small>
+            </div>
+        </button>
+
+        <button class="nav-item" data-module="10">
+            <span>11</span>
+            <div>
+                <strong>EEE Capstone</strong>
+                <small>Build your solution</small>
+            </div>
+        </button>
+
+    </nav>
+
+
+    <div class="sidebar-footer">
+
+        <div class="progress-label">
+            <span>Workshop progress</span>
+            <strong id="progressText">1 / 11</strong>
+        </div>
+
+        <div class="progress-bar">
+            <div id="progressFill"></div>
+        </div>
+
+    </div>
+
+</aside>
+
+
+<!-- =========================================================
+     MAIN
+========================================================= -->
+
+<main class="main-content">
+
+    <!-- TOP BAR -->
+
+    <div class="topbar">
+
+        <div>
+            <span class="breadcrumb">AWS × EEE</span>
+            <span class="slash">/</span>
+            <span id="currentModuleName">
+                Cloud Fundamentals
+            </span>
+        </div>
+
+        <div class="top-actions">
+
+            <button id="searchBtn" class="top-btn">
+                ⌕ Search
+            </button>
+
+            <a
+                href="https://aws.amazon.com/"
+                target="_blank"
+                class="aws-btn"
+            >
+                AWS ↗
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         WORKBOOK
+    ====================================================== -->
+
+    <div class="workbook" id="workbook">
+
+
+<!-- =========================================================
+     MODULE 1
+========================================================= -->
+
+<section class="module active-module" data-module="0">
+
+    <div class="module-header">
+
+        <div class="module-number">
+            MODULE 01
+        </div>
+
+        <h1>Cloud Fundamentals</h1>
+
+        <p class="module-intro">
+            Before connecting an electrical device to AWS,
+            understand what the cloud actually provides and
+            how an electrical engineer should think about it.
+        </p>
+
+    </div>
+
+
+    <!-- LEARNING OBJECTIVES -->
+
+    <div class="learning-card">
+
+        <div class="card-icon">🎯</div>
+
+    <!-- UNIVERSAL SERVICE OVERVIEW & THEORY CARD -->
+    <div class="service-overview-card">
+        <div class="overview-header">
+            <div class="service-icon-badge">☁️</div>
+            <div>
+                <span class="overview-tag">MODULE 01 — CLOUD FUNDAMENTALS THEORY</span>
+                <h2>What is Cloud Computing & Why Use It?</h2>
+            </div>
+        </div>
+
+        <div class="overview-section">
+            <h3>💡 What is this service? (In Plain English)</h3>
+            <p>Cloud computing means using computing resources—such as servers, storage databases, network switches, and analytics—over the internet on-demand instead of buying and maintaining physical server hardware yourself. For an electrical engineer, think of AWS as an infinite, virtualized electronic laboratory.</p>
+        </div>
+
+        <div class="overview-grid">
+            <div class="overview-box use-case">
+                <h4>🎯 Why Use It? (Key Benefits)</h4>
+                <ul>
+                    <li><strong>Zero Physical Maintenance:</strong> No need to build server rooms, buy UPS backups, or manage cooling systems.</li><li><strong>Elastic Scalability:</strong> Instantly expand compute & storage capacity as your grid or device fleet grows.</li><li><strong>Pay-As-You-Go:</strong> Pay strictly for the resources your engineering experiment or application consumes.</li>
+                </ul>
+            </div>
+
+            <div class="overview-box vs-traditional">
+                <h4>🏭 Traditional vs Cloud Solution</h4>
+                <div class="vs-comparison">
+                    <div class="vs-item old">
+                        <strong>Traditional EEE:</strong> Buying physical servers, manually configuring OS & network switches, incurring high electricity & maintenance costs.
+                    </div>
+                    <div class="vs-item new">
+                        <strong>With AWS:</strong> Provisioning cloud compute, storage, and IoT gateways in seconds with global availability and automatic redundancy.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="engineering-example-card">
+            <div class="example-badge">⚡ Real-World EEE Application</div>
+            <p>A smart power utility operating 10,000 smart energy meters across a city. Instead of building an on-premise datacenter, all meters stream telemetry directly to AWS cloud services for real-time load analysis.</p>
+        </div>
+
+        <div class="concepts-pills">
+            <h4>🔑 Key Concepts You Need To Know:</h4>
+            <div class="pills-container">
+                <div class="pill"><strong>AWS Region:</strong> Geographic location containing multiple isolated Datacenters (Availability Zones).</div><div class="pill"><strong>On-Demand Compute:</strong> Spinning up virtual hardware only when calculations or measurements run.</div><div class="pill"><strong>AWS Console:</strong> Web-based graphical management dashboard for configuring all cloud services.</div>
+            </div>
+        </div>
+    </div>
+
+
+
+        <div>
+
+            <h3>By the end of this module, you should be able to:</h3>
+
+            <ul>
+                <li>Explain cloud computing in simple engineering terms.</li>
+                <li>Understand the basic AWS service model.</li>
+                <li>Identify compute, storage, monitoring and IoT services.</li>
+                <li>Explain why cloud systems are useful for EEE applications.</li>
+                <li>Navigate the AWS Management Console.</li>
+                <li>Understand AWS Regions and basic cost awareness.</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+
+    <!-- LESSON -->
+
+    <div class="lesson">
+
+        <div class="lesson-label">01.1 — CONCEPT</div>
+
+        <h2>What is Cloud Computing?</h2>
+
+        <p>
+            Cloud computing means using computing resources such as
+            servers, storage, databases, networking and monitoring
+            through the internet instead of purchasing and maintaining
+            every physical computing resource yourself.
+        </p>
+
+        <p>
+            For an electrical engineer, imagine a laboratory where
+            you can request a server, storage system, monitoring
+            dashboard or message-processing system whenever your
+            experiment needs it.
+        </p>
+
+
+        <div class="engineering-example">
+
+            <div class="example-title">
+                ⚡ EEE Example
+            </div>
+
+            <p>
+                Imagine a company has <strong>500 smart energy meters</strong>.
+                Every meter sends voltage, current, power factor and
+                energy readings every few seconds.
+            </p>
+
+            <p>
+                Instead of building a physical server room just to
+                receive and store those readings, the system can send
+                the telemetry to cloud services.
+            </p>
+
+        </div>
+
+
+        <h3>Traditional approach</h3>
+
+        <div class="comparison">
+
+            <div class="comparison-box traditional">
+
+                <div class="comparison-heading">
+                    🏭 Traditional System
+                </div>
+
+                <ol>
+                    <li>Buy physical server.</li>
+                    <li>Install operating system.</li>
+                    <li>Configure networking.</li>
+                    <li>Maintain storage.</li>
+                    <li>Monitor hardware.</li>
+                    <li>Scale when devices increase.</li>
+                </ol>
+
+            </div>
+
+
+            <div class="comparison-arrow">
+                →
+            </div>
+
+
+            <div class="comparison-box cloud">
+
+                <div class="comparison-heading">
+                    ☁️ Cloud System
+                </div>
+
+                <ol>
+                    <li>Create cloud resources.</li>
+                    <li>Connect devices.</li>
+                    <li>Send telemetry.</li>
+                    <li>Store data.</li>
+                    <li>Process events.</li>
+                    <li>Monitor the system.</li>
+                </ol>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- AWS MENTAL MODEL -->
+
+    <div class="lesson">
+
+        <div class="lesson-label">01.2 — ENGINEER'S MENTAL MODEL</div>
+
+        <h2>Think of AWS as an Electronic Workbench</h2>
+
+        <p>
+            Do not try to memorize hundreds of AWS services.
+            Start by asking:
+        </p>
+
+
+        <div class="question-box">
+            <strong>“What does my engineering system need?”</strong>
+        </div>
+
+
+        <div class="service-grid">
+
+            <div class="mini-card">
+                <span>🔌</span>
+                <h3>Connect</h3>
+                <p>
+                    How does my sensor communicate with the cloud?
+                </p>
+                <strong>AWS IoT Core</strong>
+            </div>
+
+            <div class="mini-card">
+                <span>⚙️</span>
+                <h3>Process</h3>
+                <p>
+                    Where should telemetry calculations happen?
+                </p>
+                <strong>AWS Lambda</strong>
+            </div>
+
+            <div class="mini-card">
+                <span>🗄️</span>
+                <h3>Store</h3>
+                <p>
+                    Where should reports and data files be stored?
+                </p>
+                <strong>Amazon S3</strong>
+            </div>
+
+            <div class="mini-card">
+                <span>📨</span>
+                <h3>Queue</h3>
+                <p>
+                    What happens when messages arrive faster than
+                    processing?
+                </p>
+                <strong>Amazon SQS</strong>
+            </div>
+
+            <div class="mini-card">
+                <span>🔔</span>
+                <h3>Alert</h3>
+                <p>
+                    How do we notify an engineer?
+                </p>
+                <strong>Amazon SNS</strong>
+            </div>
+
+            <div class="mini-card">
+                <span>📊</span>
+                <h3>Monitor</h3>
+                <p>
+                    How do we observe system health?
+                </p>
+                <strong>CloudWatch</strong>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- AWS CONSOLE -->
+
+    <div class="practical-lab">
+
+        <div class="lab-header">
+
+            <div class="lab-tag">
+                🛠 PRACTICAL LAB 01
+            </div>
+
+            <h2>Enter & Navigate the AWS Management Console</h2>
+
+            <p>
+                This is your starting point for the hands-on workshop.
+                Learn how to open any AWS service in seconds, set your AWS region, and navigate the cloud environment like a seasoned engineer.
+            </p>
+
+        </div>
+
+
+        <!-- CONSOLE REAL-TIME VISUAL REFERENCE -->
+        <div class="console-image-card">
+            <div class="console-image-header">
+                <div class="console-image-title">
+                    <span class="console-badge">AWS Console Visual</span>
+                    <strong>AWS Global Navigation & Service Search</strong>
+                </div>
+                <button class="image-zoom-btn">🔍 Click to Expand</button>
+            </div>
+            <div class="console-image-wrapper">
+                <img src="images/aws_console_search.png" alt="AWS Console Search Bar Reference Screen">
+            </div>
+            <div class="image-caption">
+                <strong>Console Navigation Tip:</strong> Use the top search bar (or press <kbd>Alt</kbd> + <kbd>S</kbd>) to quickly jump to any AWS service. Always verify your Region in the top right corner.
+            </div>
+        </div>
+
+
+        <div class="before-box">
+
+            <strong>Before you begin</strong>
+
+            <ul>
+                <li>Have access to your AWS account login credentials.</li>
+                <li>Use a laptop/desktop with a modern browser (Chrome, Firefox, Edge, Safari).</li>
+                <li>Keep your AWS password, credentials, and access keys strictly private.</li>
+                <li>Select and maintain one AWS Region consistently throughout the workshop.</li>
+            </ul>
+
+        </div>
+
+
+        <div class="step" id="step-mod-0-0">
+
+            <div class="step-number">1</div>
+
+            <div class="step-content">
+
+                <h3>Open the AWS Console Log-In Page</h3>
+
+                <div class="console-path-badge">
+                    🌐 Browser Address Bar ➔ https://aws.amazon.com/console/
+                </div>
+
+                <p>
+                    Open your web browser and navigate to the official AWS Management Console entrance.
+                </p>
+
+                <ul class="sub-step-list">
+                    <li>Click <strong>Sign In to the Console</strong> in the upper right corner.</li>
+                    <li>Select your account type (<strong>IAM user</strong> or <strong>AWS IAM Identity Center</strong> as specified by your workshop instructor).</li>
+                    <li>Enter your <strong>12-digit AWS Account ID</strong> or Account Alias.</li>
+                    <li>Enter your Username and Password, then click <strong>Sign In</strong>.</li>
+                </ul>
+
+                <div class="expected">
+                    <strong>Expected result:</strong> You will land on the AWS Management Console Home Dashboard showing recent services and widget cards.
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="step" id="step-mod-0-1">
+
+            <div class="step-number">2</div>
+
+            <div class="step-content">
+
+                <h3>Set Your Workshop AWS Region</h3>
+
+                <div class="console-path-badge">
+                    📍 Top Right Console Header ➔ Region Dropdown Menu
+                </div>
+
+                <p>
+                    AWS services exist inside geographical data centers called <strong>Regions</strong>. To ensure all your IoT sensors, queues, and functions can communicate, you must work in the exact same Region.
+                </p>
+
+                <ul class="sub-step-list">
+                    <li>Click the Region name located to the left of your account username in the top right header.</li>
+                    <li>Select <strong>US East (N. Virginia) <code>us-east-1</code></strong> or <strong>Asia Pacific (Mumbai) <code>ap-south-1</code></strong> as instructed.</li>
+                    <li>Verify the Region code in your browser URL contains your chosen region code.</li>
+                </ul>
+
+                <div class="why-box">
+                    <strong>Why is this important for EEE?</strong>
+                    If your micro-controller publishes telemetry to IoT Core in <code>us-east-1</code>, but your Lambda function was created in <code>us-west-2</code>, the system will not receive the data!
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="step" id="step-mod-0-2">
+
+            <div class="step-number">3</div>
+
+            <div class="step-content">
+
+                <h3>Master the AWS Service Search Bar</h3>
+
+                <div class="console-path-badge">
+                    🔍 Top Left Header ➔ Search Field [ Alt + S ]
+                </div>
+
+                <p>
+                    AWS has over 200 services. The fastest way to open any service is using the global search bar.
+                </p>
+
+                <ul class="sub-step-list">
+                    <li>Click on the search box at the top of the AWS Console header (or press keyboard shortcut <code>Alt + S</code>).</li>
+                    <li>Type the exact service name (e.g. <code>IoT Core</code>, <code>SQS</code>, <code>Lambda</code>, <code>S3</code>).</li>
+                    <li>Click on the service name under the <strong>Services</strong> section in the results menu.</li>
+                    <li>Click the ⭐️ star icon next to the service name to pin it to your navigation bar for fast access during the workshop!</li>
+                </ul>
+
+                <div class="copy-box">
+                    <code>AWS IoT Core</code>
+                    <button class="copy-btn">Copy Service Name</button>
+                </div>
+
+                <div class="expected">
+                    <strong>Expected result:</strong> Selecting the service opens the main landing dashboard for that specific AWS product.
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="cleanup-box">
+
+            <h3>💰 Cost & Resource Awareness for Engineers</h3>
+
+            <p>
+                Cloud resources are provisioned on-demand. AWS provides a generous Free Tier for workshop services (like IoT Core, Lambda, SQS, S3). Always delete or stop resources after your project lab to avoid unexpected charges.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- QUICK CHECK -->
+
+    <div class="quiz-card">
+
+        <div class="quiz-title">
+            📝 Quick Check
+        </div>
+
+        <p>
+            Which group contains the core functions we need in a
+            cloud-based EEE system?
+        </p>
+
+        <button class="quiz-option"
+                data-answer="wrong">
+            Only storage
+        </button>
+
+        <button class="quiz-option"
+                data-answer="wrong">
+            Only virtual machines
+        </button>
+
+        <button class="quiz-option"
+                data-answer="correct">
+            Connect, process, store, queue, monitor and alert
+        </button>
+
+        <button class="quiz-option"
+                data-answer="wrong">
+            Only networking
+        </button>
+
+        <div class="quiz-result"></div>
+
+    </div>
+
+
+    <!-- THINK LIKE ENGINEER -->
+
+    <div class="think-box">
+
+        <div class="think-icon">🧠</div>
+
+        <div>
+
+            <h3>Think Like an Engineer</h3>
+
+            <p>
+                You are designing a transformer monitoring system.
+                Answer these mentally before moving forward:
+            </p>
+
+            <ol>
+                <li>
+                    Where would you store five years of historical
+                    telemetry?
+                </li>
+
+                <li>
+                    Where could you automatically calculate
+                    voltage × current?
+                </li>
+
+                <li>
+                    How would you notify an engineer if temperature
+                    exceeds a threshold?
+                </li>
+
+                <li>
+                    What happens if 10,000 devices send messages
+                    simultaneously?
+                </li>
+            </ol>
+
+        </div>
+
+    </div>
+
+
+    <div class="lesson-end">
+
+        <span>MODULE 01 COMPLETE</span>
+
+        <button class="next-module">
+            Continue to Module 02 →
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     MODULE 2
+========================================================= -->
+
+<section class="module" data-module="1">
+
+    <div class="module-header">
+
+        <div class="module-number">
+            MODULE 02
+        </div>
+
+        <h1>AWS × EEE Applications</h1>
+
+        <p class="module-intro">
+            Cloud computing becomes useful when it solves a real
+            engineering problem. This module connects AWS services
+            with electrical and electronics applications.
+        </p>
+
+    </div>
+
+
+    <div class="lesson">
+
+        <div class="lesson-label">02.1 — WHY AWS FOR EEE?</div>
+
+    <!-- UNIVERSAL SERVICE OVERVIEW & THEORY CARD -->
+    <div class="service-overview-card">
+        <div class="overview-header">
+            <div class="service-icon-badge">⚡</div>
+            <div>
+                <span class="overview-tag">MODULE 02 — AWS × EEE APPLICATIONS THEORY</span>
+                <h2>Why Cloud Matters for Electrical & Electronics Engineers</h2>
+            </div>
+        </div>
+
+        <div class="overview-section">
+            <h3>💡 What is this service? (In Plain English)</h3>
+            <p>Modern electrical and electronics engineering is shifting from isolated physical hardware (transformers, motors, microcontrollers) to cloud-connected intelligent systems. AWS bridges the gap between physical sensor measurements and automated cloud decisions.</p>
+        </div>
+
+        <div class="overview-grid">
+            <div class="overview-box use-case">
+                <h4>🎯 Why Use It? (Key Benefits)</h4>
+                <ul>
+                    <li><strong>Remote Asset Monitoring:</strong> Track high-voltage transformers, solar PV farms, and EV chargers from anywhere.</li><li><strong>Predictive Maintenance:</strong> Analyze vibration and temperature trends to detect equipment fault before failure.</li><li><strong>Automated Control Loops:</strong> Trigger emergency grid load shedding or alert dispatches automatically in milliseconds.</li>
+                </ul>
+            </div>
+
+            <div class="overview-box vs-traditional">
+                <h4>🏭 Traditional vs Cloud Solution</h4>
+                <div class="vs-comparison">
+                    <div class="vs-item old">
+                        <strong>Traditional EEE:</strong> Manual technician inspections, paper logbooks, and isolated local memory cards that overflow.
+                    </div>
+                    <div class="vs-item new">
+                        <strong>With AWS:</strong> Continuous real-time cloud telemetry streams with automated anomaly detection and central dashboards.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="engineering-example-card">
+            <div class="example-badge">⚡ Real-World EEE Application</div>
+            <p>High-Voltage Transformer Oil Temperature Monitoring: Thermal sensors attached to a power transformer stream readings to AWS. If oil temperature spikes above 85°C, the cloud system automatically alerts duty engineers and schedules maintenance.</p>
+        </div>
+
+        <div class="concepts-pills">
+            <h4>🔑 Key Concepts You Need To Know:</h4>
+            <div class="pills-container">
+                <div class="pill"><strong>Sensor Telemetry:</strong> Continuous stream of physical measurements (Voltage, Current, Temperature, Frequency).</div><div class="pill"><strong>Edge Devices:</strong> Microcontrollers (ESP32, STM32, Raspberry Pi) collecting physical signals.</div><div class="pill"><strong>Closed-Loop Control:</strong> Using cloud insights to trigger actuators or relays back in the physical field.</div>
+            </div>
+        </div>
+    </div>
+
+
+
+        <h2>From Physical Signals to Cloud Decisions</h2>
+
+        <p>
+            Electrical systems already generate enormous amounts of
+            information. Sensors measure electrical, thermal,
+            mechanical and environmental parameters.
+        </p>
+
+        <p>
+            AWS provides cloud services that can receive, process,
+            store and monitor this information.
+        </p>
+
+
+        <div class="pipeline">
+
+            <div class="pipeline-item">
+                <span>⚡</span>
+                <strong>Physical System</strong>
+                <small>Transformer / motor / EV</small>
+            </div>
+
+            <div class="pipeline-arrow">→</div>
+
+            <div class="pipeline-item">
+                <span>📡</span>
+                <strong>Telemetry</strong>
+                <small>Voltage / current / temperature</small>
+            </div>
+
+            <div class="pipeline-arrow">→</div>
+
+            <div class="pipeline-item">
+                <span>☁️</span>
+                <strong>AWS Cloud</strong>
+                <small>Process + store</small>
+            </div>
+
+            <div class="pipeline-arrow">→</div>
+
+            <div class="pipeline-item">
+                <span>🚨</span>
+                <strong>Action</strong>
+                <small>Alert / control</small>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="application-grid">
+
+        <div class="application-card">
+            <span>⚡</span>
+            <h3>Smart Energy</h3>
+            <p>
+                Monitor electricity consumption and power quality
+                across buildings or industrial sites.
+            </p>
+            <strong>Example sensors:</strong>
+            <small>Current transformer, voltage sensor, energy meter</small>
+        </div>
+
+        <div class="application-card">
+            <span>🏭</span>
+            <h3>Industrial Automation</h3>
+            <p>
+                Collect machine telemetry and identify abnormal
+                operating conditions.
+            </p>
+            <strong>Example sensors:</strong>
+            <small>Temperature, vibration, current</small>
+        </div>
+
+        <div class="application-card">
+            <span>🔋</span>
+            <h3>EV & Battery Systems</h3>
+            <p>
+                Monitor battery temperature, voltage, current and
+                state-related information.
+            </p>
+            <strong>Example sensors:</strong>
+            <small>Cell voltage, temperature, current</small>
+        </div>
+
+        <div class="application-card">
+            <span>🌞</span>
+            <h3>Renewable Energy</h3>
+            <p>
+                Monitor solar or wind generation and equipment
+                performance.
+            </p>
+            <strong>Example sensors:</strong>
+            <small>Voltage, current, irradiance, temperature</small>
+        </div>
+
+        <div class="application-card">
+            <span>🏠</span>
+            <h3>Smart Buildings</h3>
+            <p>
+                Monitor lighting, energy consumption, temperature
+                and equipment.
+            </p>
+            <strong>Example sensors:</strong>
+            <small>Occupancy, temperature, energy meter</small>
+        </div>
+
+        <div class="application-card">
+            <span>🔧</span>
+            <h3>Predictive Maintenance</h3>
+            <p>
+                Detect abnormal patterns before equipment failure.
+            </p>
+            <strong>Example sensors:</strong>
+            <small>Vibration, temperature, motor current</small>
+        </div>
+
+    </div>
+
+
+    <div class="lesson">
+
+        <div class="lesson-label">02.2 — ENGINEERING PROBLEM MAPPING</div>
+
+        <h2>Ask These Three Questions</h2>
+
+        <div class="three-questions">
+
+            <div>
+                <strong>01</strong>
+                <h3>What is the problem?</h3>
+                <p>
+                    Example: Transformer temperature is not being
+                    monitored continuously.
+                </p>
+            </div>
+
+            <div>
+                <strong>02</strong>
+                <h3>What data is required?</h3>
+                <p>
+                    Example: Temperature every 10 seconds.
+                </p>
+            </div>
+
+            <div>
+                <strong>03</strong>
+                <h3>What action is required?</h3>
+                <p>
+                    Example: Alert the maintenance engineer when
+                    temperature crosses the threshold.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="quiz-card">
+
+        <div class="quiz-title">📝 Quick Check</div>
+
+        <p>
+            Which is the best example of cloud-assisted EEE?
+        </p>
+
+        <button class="quiz-option" data-answer="wrong">
+            A resistor connected to a battery
+        </button>
+
+        <button class="quiz-option" data-answer="correct">
+            Sensors sending transformer telemetry to cloud services
+        </button>
+
+        <button class="quiz-option" data-answer="wrong">
+            A disconnected multimeter
+        </button>
+
+        <div class="quiz-result"></div>
+
+    </div>
+
+
+    <div class="lesson-end">
+
+        <span>MODULE 02 COMPLETE</span>
+
+        <button class="next-module">
+            Continue to Module 03 →
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     MODULE 3 — IOT CORE
+========================================================= -->
+
+<section class="module" data-module="2">
+
+    <div class="module-header">
+
+        <div class="module-number">
+            MODULE 03
+        </div>
+
+        <h1>AWS IoT Core + MQTT</h1>
+
+        <p class="module-intro">
+            Connect an engineering device to AWS IoT Core,
+            understand MQTT and observe telemetry inside the
+            AWS IoT MQTT test client.
+        </p>
+
+    </div>
+
+
+    <div class="concept-banner">
+
+        <div class="concept-icon">📡</div>
+
+    <!-- UNIVERSAL SERVICE OVERVIEW & THEORY CARD -->
+    <div class="service-overview-card">
+        <div class="overview-header">
+            <div class="service-icon-badge">🌐</div>
+            <div>
+                <span class="overview-tag">MODULE 03 — AWS IOT CORE & MQTT THEORY</span>
+                <h2>What is AWS IoT Core & Why Use It?</h2>
+            </div>
+        </div>
+
+        <div class="overview-section">
+            <h3>💡 What is this service? (In Plain English)</h3>
+            <p>AWS IoT Core is a managed cloud service that allows physical devices (like ESP32/STM32 microcontrollers, smart energy meters, and solar inverters) to connect securely and send/receive data to AWS without managing server infrastructure.</p>
+        </div>
+
+        <div class="overview-grid">
+            <div class="overview-box use-case">
+                <h4>🎯 Why Use It? (Key Benefits)</h4>
+                <ul>
+                    <li><strong>Lightweight MQTT Protocol:</strong> Designed specifically for resource-constrained microcontrollers and low-bandwidth networks.</li><li><strong>Enterprise Cybersecurity:</strong> Uses Mutual TLS (X.509 certificates) to encrypt all sensor data and block unauthorized access.</li><li><strong>Device Shadow:</strong> Stores the last known state of your physical hardware even when it loses power or connection.</li><li><strong>Automated Rules Engine:</strong> Routes incoming sensor messages directly to SQS queues, Lambda functions, or S3 storage with zero code.</li>
+                </ul>
+            </div>
+
+            <div class="overview-box vs-traditional">
+                <h4>🏭 Traditional vs Cloud Solution</h4>
+                <div class="vs-comparison">
+                    <div class="vs-item old">
+                        <strong>Traditional EEE:</strong> Hosting a vulnerable, unencrypted custom MQTT broker on a local PC that crashes during network spikes.
+                    </div>
+                    <div class="vs-item new">
+                        <strong>With AWS:</strong> Managed, globally available AWS IoT Core broker that scales to millions of concurrent device connections securely.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="engineering-example-card">
+            <div class="example-badge">⚡ Real-World EEE Application</div>
+            <p>Solar Micro-Inverter Fleet: 500 solar panels in a PV plant each send AC Voltage, DC Current, and Power output every 5 seconds to AWS IoT Core over MQTT, enabling live efficiency tracking.</p>
+        </div>
+
+        <div class="concepts-pills">
+            <h4>🔑 Key Concepts You Need To Know:</h4>
+            <div class="pills-container">
+                <div class="pill"><strong>MQTT Protocol:</strong> Lightweight publish/subscribe messaging protocol for low-power IoT devices.</div><div class="pill"><strong>MQTT Topic:</strong> String path (e.g. 'telemetry/transformer-01/temp') used to address and filter messages.</div><div class="pill"><strong>Device Shadow:</strong> JSON document in AWS IoT Core representing current and desired device state.</div><div class="pill"><strong>Rules Engine:</strong> Automated trigger that inspects incoming MQTT payloads and routes them to AWS services.</div>
+            </div>
+        </div>
+    </div>
+
+
+
+        <div>
+
+            <h2>What is AWS IoT Core?</h2>
+
+            <p>
+                AWS IoT Core provides secure communication between
+                connected devices and AWS. It supports device
+                communication using protocols including MQTT and HTTPS.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="lesson">
+
+        <div class="lesson-label">03.1 — MQTT</div>
+
+        <h2>Understand MQTT Before Using It</h2>
+
+        <p>
+            MQTT is a lightweight publish/subscribe messaging protocol.
+            Instead of one device directly calling another device,
+            devices publish messages to topics.
+        </p>
+
+
+        <div class="mqtt-diagram">
+
+            <div class="device-box">
+                <span>🌡️</span>
+                <strong>Temperature Sensor</strong>
+                <small>Publisher</small>
+            </div>
+
+            <div class="mqtt-line">
+                MQTT
+                <br>
+                ↓
+            </div>
+
+            <div class="broker-box">
+                <span>☁️</span>
+                <strong>AWS IoT Core</strong>
+                <small>Message broker</small>
+            </div>
+
+            <div class="mqtt-line">
+                ↓
+            </div>
+
+            <div class="device-box">
+                <span>💻</span>
+                <strong>Engineer</strong>
+                <small>Subscriber</small>
+            </div>
+
+        </div>
+
+
+        <div class="topic-box">
+
+            <span>Example MQTT Topic</span>
+
+            <code>
+                eee/transformer/01/telemetry
+            </code>
+
+        </div>
+
+    </div>
+
+
+    <!-- PRACTICAL -->
+
+    <div class="practical-lab">
+
+        <div class="lab-header">
+
+            <div class="lab-tag">
+                🛠 PRACTICAL LAB 03
+            </div>
+
+            <h2>Create an AWS IoT Thing</h2>
+
+            <p>
+                A Thing is the AWS IoT representation of a physical
+                device or logical device.
+            </p>
+
+        </div>
+
+
+        <!-- REAL-TIME CONSOLE IMAGE CARD -->
+        <div class="console-image-card">
+            <div class="console-image-header">
+                <div class="console-image-title">
+                    <span class="console-badge">AWS IoT Console Visual</span>
+                    <strong>AWS IoT Core — Things Registry & Certificate Wizard</strong>
+                </div>
+                <button class="image-zoom-btn">🔍 Click to Expand</button>
+            </div>
+            <div class="console-image-wrapper">
+                <img src="images/aws_iot_core_console.png" alt="AWS IoT Core Create Thing Console Screen">
+            </div>
+            <div class="image-caption">
+                <strong>Console Reference:</strong> Follow the steps below to register your hardware device ('Thing'), generate its X.509 certificate, and attach access policies.
+            </div>
+        </div>
+
+
+        <div class="step" id="step-mod-2-0">
+
+            <div class="step-number">1</div>
+
+            <div class="step-content">
+
+                <h3>Open the AWS IoT Core Service Dashboard</h3>
+
+                <div class="console-path-badge">
+                    🔍 Console Search Bar ➔ Type 'AWS IoT Core' ➔ Select AWS IoT Core
+                </div>
+
+                <p>
+                    AWS IoT Core is the managed cloud service that allows connected devices (smart meters, transformers, microcontrollers) to easily and securely interact with cloud applications.
+                </p>
+
+                <ul class="sub-step-list">
+                    <li>In the top search bar, enter <code>AWS IoT Core</code>.</li>
+                    <li>Click <strong>AWS IoT Core</strong> under Services.</li>
+                    <li>Look at the left navigation panel. Expand the menu if collapsed.</li>
+                </ul>
+
+                <div class="expected">
+                    <strong>Expected result:</strong> You will see the AWS IoT Core Overview panel showing your region's custom Device Data Endpoint URL.
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="step" id="step-mod-2-1">
+
+            <div class="step-number">2</div>
+
+            <div class="step-content">
+
+                <h3>Navigate to 'Things' Registry & Click 'Create things'</h3>
+
+                <div class="console-path-badge">
+                    📁 Left Navigation Panel ➔ All devices ➔ Things ➔ Click [ Create things ]
+                </div>
+
+                <p>
+                    A <strong>Thing</strong> is a digital representation of your physical device (e.g. smart transformer, solar inverter, ESP32) inside the AWS cloud registry.
+                </p>
+
+                <ul class="sub-step-list">
+                    <li>In the left sidebar, click <strong>All devices</strong> to expand sub-menu options.</li>
+                    <li>Click <strong>Things</strong>.</li>
+                    <li>Click the orange <strong>Create things</strong> button on the right side of the page.</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <div class="step" id="step-mod-2-2">
+
+            <div class="step-number">3</div>
+
+            <div class="step-content">
+
+                <h3>Configure Single Thing Parameters</h3>
+
+                <div class="console-path-badge">
+                    ⚙️ Create Things Wizard ➔ Step 1: Specify thing properties
+                </div>
+
+                <ul class="sub-step-list">
+                    <li>Select the radio button <strong>Create single thing</strong> and click <strong>Next</strong>.</li>
+                    <li>In the <strong>Thing name</strong> input field, enter:</li>
+                </ul>
+
+                <div class="copy-box">
+                    <code>EEE-Transformer-01</code>
+                    <button class="copy-btn">Copy</button>
+                </div>
+
+                <ul class="sub-step-list">
+                    <li>Leave <strong>Unnamed shadow (classic)</strong> unchecked for now.</li>
+                    <li>Scroll down and click <strong>Next</strong>.</li>
+                </ul>
+
+                <div class="why-box">
+                    <strong>Why this name?</strong> AWS uses exact Thing Names for MQTT topic filters and device shadows. Naming must follow strict alphanumeric format without spaces.
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="step" id="step-mod-2-3">
+
+            <div class="step-number">4</div>
+
+            <div class="step-content">
+
+                <h3>Generate Device X.509 Certificate</h3>
+
+                <div class="console-path-badge">
+                    🔒 Step 2: Configure device certificate
+                </div>
+
+                <p>
+                    AWS IoT Core uses mutual TLS (mTLS) authentication. Devices require an X.509 certificate to connect.
+                </p>
+
+                <ul class="sub-step-list">
+                    <li>Select <strong>Auto-generate a new certificate (recommended)</strong>.</li>
+                    <li>Click <strong>Next</strong> to proceed to policy attachment.</li>
+                    <li>When prompted after creation, click <strong>Download</strong> for:
+                        <br>• Device certificate (<code>.pem.crt</code>)
+                        <br>• Private key (<code>.pem.key</code>)
+                        <br>• Amazon Root CA 1 certificate
+                    </li>
+                </ul>
+
+                <div class="warning">
+                    ⚠️ <strong>Crucial Security Step:</strong> You will only be able to download the private key ONCE. Save it into a secure workshop folder.
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="step" id="step-mod-2-4">
+
+            <div class="step-number">5</div>
+
+            <div class="step-content">
+
+                <h3>Create & Attach AWS IoT Security Policy</h3>
+
+                <div class="console-path-badge">
+                    🛡 Step 3: Attach policies to certificate
+                </div>
+
+                <p>
+                    Without an attached Policy, your device cannot publish or subscribe to any MQTT topic.
+                </p>
+
+                <ul class="sub-step-list">
+                    <li>Click <strong>Create policy</strong> (opens in a new tab) or select <code>EEE_IoT_Policy</code> if previously created.</li>
+                    <li>In Policy Name, enter <code>EEE-Allow-All-Policy</code>.</li>
+                    <li>In Policy Effect select <strong>Allow</strong>.</li>
+                    <li>In Policy Action enter <code>iot:*</code> (or specifically <code>iot:Connect</code>, <code>iot:Publish</code>, <code>iot:Subscribe</code>, <code>iot:Receive</code>).</li>
+                    <li>In Policy Resource ARN enter <code>*</code> for workshop testing.</li>
+                    <li>Click <strong>Create</strong>, return to the Thing creation tab, select your policy, and click <strong>Create thing</strong>.</li>
+                </ul>
+
+                <div class="expected">
+                    <strong>Expected result:</strong> Green status banner: <code>Successfully created thing: EEE-Transformer-01</code>.
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="step" id="step-mod-2-5">
+
+            <div class="step-number">6</div>
+
+            <div class="step-content">
+
+                <h3>Test MQTT Messages in the Console</h3>
+
+                <div class="console-path-badge">
+                    🧪 Left Navigation Panel ➔ Test ➔ MQTT test client
+                </div>
+
+                <p>
+                    Test real-time messaging before connecting physical microcontrollers like ESP32 or Raspberry Pi.
+                </p>
+
+                <ul class="sub-step-list">
+                    <li>In the left panel under <strong>Test</strong>, click <strong>MQTT test client</strong>.</li>
+                    <li>Select the tab <strong>Subscribe to a topic</strong>.</li>
+                    <li>In <strong>Topic filter</strong>, enter <code>eee/transformer/01/telemetry</code> and click <strong>Subscribe</strong>.</li>
+                    <li>Now click the tab <strong>Publish to a topic</strong>, enter <code>eee/transformer/01/telemetry</code>, paste sample JSON payload below, and click <strong>Publish</strong>:</li>
+                </ul>
+
+                <div class="copy-box">
+                    <code>{"voltage": 230.5, "current": 12.4, "power": 2.85, "status": "NORMAL"}</code>
+                    <button class="copy-btn">Copy Payload</button>
+                </div>
+
+                <div class="expected">
+                    <strong>Expected result:</strong> The payload appears instantly in your subscribe log below with timestamp and topic tag!
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-number">7</div>
+
+            <div class="step-content">
+
+                <h3>Download certificates</h3>
+
+                <p>
+                    When AWS displays the download page, save the
+                    required certificate and key files securely.
+                </p>
+
+                <div class="critical-box">
+                    🔐 <strong>Important:</strong>
+                    Save private credentials securely. Do not upload
+                    them to GitHub or paste them into public websites.
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="result-box">
+
+            <h3>✅ Expected Result</h3>
+
+            <p>
+                You should now have an AWS IoT Thing representing:
+            </p>
+
+            <code>EEE-Transformer-01</code>
+
+            <p>
+                The next task is to test MQTT communication.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- MQTT TEST -->
+
+    <div class="practical-lab">
+
+        <div class="lab-header">
+
+            <div class="lab-tag">
+                🧪 PRACTICAL LAB 03B
+            </div>
+
+            <h2>Publish Telemetry Using MQTT Test Client</h2>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-number">1</div>
+
+            <div class="step-content">
+
+                <h3>Open MQTT test client</h3>
+
+                <p>
+                    In AWS IoT Core, open:
+                </p>
+
+                <div class="selection">
+                    <span>Test</span>
+                    <strong>MQTT test client</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-number">2</div>
+
+            <div class="step-content">
+
+                <h3>Subscribe to a topic</h3>
+
+                <p>
+                    Subscribe to:
+                </p>
+
+                <div class="copy-box">
+                    <code>eee/transformer/01/telemetry</code>
+                    <button class="copy-btn">Copy</button>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-number">3</div>
+
+            <div class="step-content">
+
+                <h3>Publish a telemetry message</h3>
+
+                <p>
+                    Use this example payload:
+                </p>
+
+                <pre><code>{
+  "deviceId": "EEE-Transformer-01",
+  "voltage": 230,
+  "current": 8.4,
+  "temperature": 62.5,
+  "powerFactor": 0.94,
+  "timestamp": "2026-09-04T10:30:00Z"
+}</code></pre>
+
+            </div>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-number">4</div>
+
+            <div class="step-content">
+
+                <h3>Observe the message</h3>
+
+                <p>
+                    Because you subscribed to the same topic,
+                    the published message should appear in the
+                    MQTT test client.
+                </p>
+
+                <div class="expected">
+                    Expected:
+                    You can see the telemetry payload arriving.
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- RULES -->
+
+    <div class="lesson">
+
+        <div class="lesson-label">03.3 — MESSAGE ROUTING</div>
+
+        <h2>IoT Rules: Where Does the Message Go?</h2>
+
+        <p>
+            Receiving an MQTT message is only the beginning.
+            AWS IoT Rules can evaluate MQTT messages and route
+            them to other AWS services.
+        </p>
+
+
+        <div class="architecture-small">
+
+            <div>📡 Sensor</div>
+            <span>→</span>
+            <div>☁️ IoT Core</div>
+            <span>→</span>
+            <div>📜 IoT Rule</div>
+            <span>→</span>
+            <div>⚙️ AWS Service</div>
+
+        </div>
+
+
+        <div class="route-grid">
+
+            <div>
+                <strong>IoT Rule → SQS</strong>
+                <p>Buffer messages.</p>
+            </div>
+
+            <div>
+                <strong>IoT Rule → Lambda</strong>
+                <p>Process telemetry.</p>
+            </div>
+
+            <div>
+                <strong>IoT Rule → S3</strong>
+                <p>Store objects/data.</p>
+            </div>
+
+            <div>
+                <strong>IoT Rule → SNS</strong>
+                <p>Send notifications.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="quiz-card">
+
+        <div class="quiz-title">📝 Module 03 Check</div>
+
+        <p>
+            MQTT is best described as:
+        </p>
+
+        <button class="quiz-option" data-answer="correct">
+            A lightweight publish/subscribe messaging protocol
+        </button>
+
+        <button class="quiz-option" data-answer="wrong">
+            A physical temperature sensor
+        </button>
+
+        <button class="quiz-option" data-answer="wrong">
+            A database
+        </button>
+
+        <div class="quiz-result"></div>
+
+    </div>
+
+
+    <div class="lesson-end">
+
+        <span>MODULE 03 COMPLETE</span>
+
+        <button class="next-module">
+            Continue to Module 04 →
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     MODULE 4 — SQS
+========================================================= -->
+
+<section class="module" data-module="3">
+
+    <div class="module-header">
+
+        <div class="module-number">MODULE 04</div>
+
+        <h1>Amazon SQS</h1>
+
+        <p class="module-intro">
+            Learn how queues protect cloud applications when
+            messages arrive faster than the processing system
+            can handle them.
+        </p>
+
+    </div>
+
+
+    <div class="concept-banner">
+
+        <div class="concept-icon">📨</div>
+
+    <!-- UNIVERSAL SERVICE OVERVIEW & THEORY CARD -->
+    <div class="service-overview-card">
+        <div class="overview-header">
+            <div class="service-icon-badge">📥</div>
+            <div>
+                <span class="overview-tag">MODULE 04 — AMAZON SQS (QUEUE) THEORY</span>
+                <h2>What is Amazon SQS & Why Use It?</h2>
+            </div>
+        </div>
+
+        <div class="overview-section">
+            <h3>💡 What is this service? (In Plain English)</h3>
+            <p>Amazon SQS (Simple Queue Service) is a distributed message queuing service that acts as a buffer between telemetry producers (microcontrollers / IoT Core) and telemetry consumers (Lambda functions / databases). Think of it as an electrical capacitor that stores electric charge to absorb sudden voltage spikes!</p>
+        </div>
+
+        <div class="overview-grid">
+            <div class="overview-box use-case">
+                <h4>🎯 Why Use It? (Key Benefits)</h4>
+                <ul>
+                    <li><strong>Decoupled Architecture:</strong> Sensors and cloud processing functions operate independently without blocking each other.</li><li><strong>Spike Load Absorption:</strong> Smooths out sudden traffic surges (e.g. 1,000 smart meters reporting a power outage simultaneously).</li><li><strong>Zero Telemetry Loss:</strong> Messages remain safely stored in SQS for up to 14 days even if downstream processing servers are offline.</li><li><strong>Dead-Letter Queue (DLQ):</strong> Isolates corrupted or unparseable telemetry packets for engineering inspection without stopping the pipeline.</li>
+                </ul>
+            </div>
+
+            <div class="overview-box vs-traditional">
+                <h4>🏭 Traditional vs Cloud Solution</h4>
+                <div class="vs-comparison">
+                    <div class="vs-item old">
+                        <strong>Traditional EEE:</strong> Microcontrollers sending direct HTTP requests to a web server; when data spikes, the server crashes and readings are lost.
+                    </div>
+                    <div class="vs-item new">
+                        <strong>With AWS:</strong> Sensors push messages to Amazon SQS, which buffers millions of payloads safely until downstream processors pick them up.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="engineering-example-card">
+            <div class="example-badge">⚡ Real-World EEE Application</div>
+            <p>Grid Outage Surge: During a thunderstorm, 500 distribution transformers send fault alerts at the exact same millisecond. SQS queues all 500 alert messages instantly, allowing Lambda functions to process them smoothly one by one.</p>
+        </div>
+
+        <div class="concepts-pills">
+            <h4>🔑 Key Concepts You Need To Know:</h4>
+            <div class="pills-container">
+                <div class="pill"><strong>Producer:</strong> System or device that sends messages to the queue (e.g. IoT Core Rules Engine).</div><div class="pill"><strong>Consumer:</strong> System or function that polls messages from the queue and processes them (e.g. AWS Lambda).</div><div class="pill"><strong>Visibility Timeout:</strong> Time window during which SQS hides a message from other consumers while one consumer processes it.</div><div class="pill"><strong>Dead-Letter Queue (DLQ):</strong> Secondary queue used to store messages that repeatedly failed processing for debugging.</div>
+            </div>
+        </div>
+    </div>
+
+
+
+        <div>
+
+            <h2>Think of SQS as an Engineering Buffer</h2>
+
+            <p>
+                A queue temporarily holds messages until a consumer
+                processes them.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="lesson">
+
+        <h2>Why do we need a queue?</h2>
+
+        <p>
+            Imagine 5,000 sensors suddenly publish telemetry.
+            Your processing function may not be able to process
+            everything simultaneously.
+        </p>
+
+        <div class="queue-diagram">
+
+            <div class="queue-device">
+                5,000 Sensors
+            </div>
+
+            <span>→</span>
+
+            <div class="queue">
+                <div class="queue-title">Amazon SQS</div>
+                <div class="messages">
+                    <span>MSG</span>
+                    <span>MSG</span>
+                    <span>MSG</span>
+                    <span>MSG</span>
+                    <span>MSG</span>
+                </div>
+            </div>
+
+            <span>→</span>
+
+            <div class="processor">
+                Lambda
+            </div>
+
+        </div>
+
+
+        <div class="key-point">
+
+            <strong>Key idea:</strong>
+
+            SQS separates the producer from the consumer.
+            This is called <strong>decoupling</strong>.
+
+        </div>
+
+    </div>
+
+
+    <div class="practical-lab">
+
+        <div class="lab-header">
+
+            <div class="lab-tag">
+                🛠 PRACTICAL LAB 04
+            </div>
+
+            <h2>Create & Configure an Amazon SQS Telemetry Queue</h2>
+
+            <p>
+                Learn how to open Amazon SQS, configure queue parameters, send test telemetry payloads, and poll messages directly from the AWS Console.
+            </p>
+
+        </div>
+
+
+        <!-- REAL-TIME CONSOLE IMAGE CARD -->
+        <div class="console-image-card">
+            <div class="console-image-header">
+                <div class="console-image-title">
+                    <span class="console-badge">AWS SQS Console Visual</span>
+                    <strong>Amazon SQS — Create Queue Dashboard</strong>
+                </div>
+                <button class="image-zoom-btn">🔍 Click to Expand</button>
+            </div>
+            <div class="console-image-wrapper">
+                <img src="images/aws_sqs_console.png" alt="Amazon SQS Create Queue Console Screen">
+            </div>
+            <div class="image-caption">
+                <strong>Console Reference:</strong> Choose between Standard (high throughput) or FIFO (strict order) queues. Name your queue <code>EEE-Telemetry-Queue</code>.
+            </div>
+        </div>
+
+
+        <div class="step" id="step-mod-3-0">
+
+            <div class="step-number">1</div>
+
+            <div class="step-content">
+
+                <h3>Open the Amazon SQS Console</h3>
+
+                <div class="console-path-badge">
+                    🔍 Console Search Bar ➔ Type 'SQS' ➔ Select Simple Queue Service
+                </div>
+
+                <ul class="sub-step-list">
+                    <li>In the top console search bar, type <code>SQS</code> or <code>Simple Queue Service</code>.</li>
+                    <li>Click <strong>Simple Queue Service</strong> in the search results.</li>
+                    <li>Make sure your AWS Region matches your workshop setting (e.g., N. Virginia or Mumbai).</li>
+                </ul>
+
+                <div class="expected">
+                    <strong>Expected result:</strong> You will land on the SQS Queues list page.
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="step" id="step-mod-3-1">
+
+            <div class="step-number">2</div>
+
+            <div class="step-content">
+
+                <h3>Click 'Create queue' & Select Queue Type</h3>
+
+                <div class="console-path-badge">
+                    ⚡ SQS Dashboard ➔ Click [ Create queue ] ➔ Select Type: Standard
+                </div>
+
+                <ul class="sub-step-list">
+                    <li>Click the orange <strong>Create queue</strong> button.</li>
+                    <li>Under <strong>Type</strong>, select <strong>Standard</strong> radio button.</li>
+                </ul>
+
+                <div class="why-box">
+                    <strong>Standard vs FIFO for EEE:</strong>
+                    <br>• <strong>Standard:</strong> Nearly unlimited throughput, best for general sensor logging where exact sub-second order isn't critical.
+                    <br>• <strong>FIFO:</strong> First-In-First-Out, ensures exact sequential ordering, ideal for power grid circuit breaker event sequences!
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="step" id="step-mod-3-2">
+
+            <div class="step-number">3</div>
+
+            <div class="step-content">
+
+                <h3>Set Queue Name & Timing Parameters</h3>
+
+                <div class="console-path-badge">
+                    ⚙️ Create Queue Form ➔ Details section
+                </div>
+
+                <ul class="sub-step-list">
+                    <li>In the <strong>Name</strong> field, enter:</li>
+                </ul>
+
+                <div class="copy-box">
+                    <code>EEE-Telemetry-Queue</code>
+                    <button class="copy-btn">Copy</button>
+                </div>
+
+                <ul class="sub-step-list">
+                    <li>Keep <strong>Visibility timeout</strong> at <code>30 seconds</code> (prevents double-processing by multiple worker instances).</li>
+                    <li>Keep <strong>Message retention period</strong> at <code>4 days</code> (data persists even if processing server crashes).</li>
+                    <li>Keep <strong>Maximum message size</strong> at <code>256 KB</code>.</li>
+                    <li>Scroll to the bottom and click <strong>Create queue</strong>.</li>
+                </ul>
+
+                <div class="expected">
+                    <strong>Expected result:</strong> Green notification banner: <code>Successfully created queue: EEE-Telemetry-Queue</code>.
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="step" id="step-mod-3-3">
+
+            <div class="step-number">4</div>
+
+            <div class="step-content">
+
+                <h3>Send & Receive Test Messages in SQS Console</h3>
+
+                <div class="console-path-badge">
+                    🧪 SQS Queue Details ➔ Click [ Send and receive messages ]
+                </div>
+
+                <ul class="sub-step-list">
+                    <li>On your queue details page, click <strong>Send and receive messages</strong> in the top right.</li>
+                    <li>Under <strong>Message body</strong>, paste a sample telemetry payload:</li>
+                </ul>
+
+                <div class="copy-box">
+                    <code>{"device_id": "EEE-Transformer-01", "temp_celsius": 68.2, "status": "WARN"}</code>
+                    <button class="copy-btn">Copy</button>
+                </div>
+
+                <ul class="sub-step-list">
+                    <li>Click <strong>Send message</strong>.</li>
+                    <li>Scroll down to <strong>Receive messages</strong> section and click <strong>Poll for messages</strong>.</li>
+                    <li>Click on the message ID to expand and inspect the raw payload stored in the cloud buffer!</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="lesson">
+
+        <h2>Producer → Queue → Consumer</h2>
+
+        <div class="three-columns">
+
+            <div>
+                <span>01</span>
+                <h3>Producer</h3>
+                <p>
+                    Sends a message.
+                </p>
+                <strong>IoT Core</strong>
+            </div>
+
+            <div>
+                <span>02</span>
+                <h3>Queue</h3>
+                <p>
+                    Holds the message.
+                </p>
+                <strong>SQS</strong>
+            </div>
+
+            <div>
+                <span>03</span>
+                <h3>Consumer</h3>
+                <p>
+                    Processes the message.
+                </p>
+                <strong>Lambda</strong>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="quiz-card">
+
+        <div class="quiz-title">📝 Quick Check</div>
+
+        <p>
+            What is the main architectural benefit of SQS?
+        </p>
+
+        <button class="quiz-option" data-answer="wrong">
+            It replaces all sensors
+        </button>
+
+        <button class="quiz-option" data-answer="correct">
+            It decouples producers and consumers and buffers messages
+        </button>
+
+        <button class="quiz-option" data-answer="wrong">
+            It is an operating system
+        </button>
+
+        <div class="quiz-result"></div>
+
+    </div>
+
+
+    <div class="lesson-end">
+
+        <span>MODULE 04 COMPLETE</span>
+
+        <button class="next-module">
+            Continue to Module 05 →
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     MODULE 5 — LAMBDA
+========================================================= -->
+
+<section class="module" data-module="4">
+
+    <div class="module-header">
+
+        <div class="module-number">MODULE 05</div>
+
+        <h1>AWS Lambda</h1>
+
+        <p class="module-intro">
+            Run engineering calculations automatically when
+            telemetry arrives, without managing a traditional server.
+        </p>
+
+    </div>
+
+
+    <div class="concept-banner">
+
+        <div class="concept-icon">⚙️</div>
+
+    <!-- UNIVERSAL SERVICE OVERVIEW & THEORY CARD -->
+    <div class="service-overview-card">
+        <div class="overview-header">
+            <div class="service-icon-badge">⚡</div>
+            <div>
+                <span class="overview-tag">MODULE 05 — AWS LAMBDA (SERVERLESS) THEORY</span>
+                <h2>What is AWS Lambda & Why Use It?</h2>
+            </div>
+        </div>
+
+        <div class="overview-section">
+            <h3>💡 What is this service? (In Plain English)</h3>
+            <p>AWS Lambda is an event-driven serverless compute service that runs your custom code (Python, Node.js, C#) automatically whenever an event occurs—such as a sensor message arriving in SQS—without requiring you to provision or manage any virtual servers.</p>
+        </div>
+
+        <div class="overview-grid">
+            <div class="overview-box use-case">
+                <h4>🎯 Why Use It? (Key Benefits)</h4>
+                <ul>
+                    <li><strong>Zero Infrastructure Management:</strong> AWS automatically handles operating system updates, server maintenance, and capacity scaling.</li><li><strong>Automatic Elastic Scaling:</strong> Scales instantly from 1 execution per day to 10,000 executions per second.</li><li><strong>Sub-Second Millisecond Billing:</strong> You pay only for the exact milliseconds your code executes. When no telemetry arrives, your cost is exactly $0!</li><li><strong>Event-Driven Architecture:</strong> Triggers automatically from SQS messages, IoT Core rules, S3 file uploads, or CloudWatch alarms.</li>
+                </ul>
+            </div>
+
+            <div class="overview-box vs-traditional">
+                <h4>🏭 Traditional vs Cloud Solution</h4>
+                <div class="vs-comparison">
+                    <div class="vs-item old">
+                        <strong>Traditional EEE:</strong> Paying $50/month to keep an EC2 server running 24/7 just to wait for occasional sensor readings.
+                    </div>
+                    <div class="vs-item new">
+                        <strong>With AWS:</strong> Lambda sits dormant at zero cost and executes in 50 milliseconds only when sensor telemetry arrives.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="engineering-example-card">
+            <div class="example-badge">⚡ Real-World EEE Application</div>
+            <p>Real-Time RMS Voltage & Power Factor Calculation: When an SQS message arrives containing raw ADC samples (1024, 2048, 3072), Lambda executes a Python script to compute RMS Voltage ($V_{rms}$) and flags overvoltage conditions.</p>
+        </div>
+
+        <div class="concepts-pills">
+            <h4>🔑 Key Concepts You Need To Know:</h4>
+            <div class="pills-container">
+                <div class="pill"><strong>Event Trigger:</strong> The AWS event (e.g., SQS message) that invokes the Lambda function.</div><div class="pill"><strong>Lambda Handler:</strong> The entry-point function in your code that AWS calls when invoked.</div><div class="pill"><strong>Execution Timeout:</strong> Maximum allowed time for Lambda to run (up to 15 minutes max per invocation).</div><div class="pill"><strong>IAM Execution Role:</strong> Security permission policy giving Lambda rights to read SQS and write to S3/SNS.</div>
+            </div>
+        </div>
+    </div>
+
+
+
+        <div>
+
+            <h2>Serverless Does NOT Mean “No Servers”</h2>
+
+            <p>
+                Lambda is called serverless because AWS manages
+                the underlying server infrastructure for you.
+                You focus on the function code and event.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="lesson">
+
+        <h2>EEE Calculation Example</h2>
+
+        <p>
+            Suppose a sensor reports:
+        </p>
+
+        <div class="measurement-grid">
+
+            <div>
+                <strong>Voltage</strong>
+                <span>230 V</span>
+            </div>
+
+            <div>
+                <strong>Current</strong>
+                <span>8.4 A</span>
+            </div>
+
+            <div>
+                <strong>Temperature</strong>
+                <span>62.5 °C</span>
+            </div>
+
+        </div>
+
+
+        <p>
+            A Lambda function can calculate:
+        </p>
+
+        <div class="formula">
+            Apparent Power ≈ Voltage × Current
+        </div>
+
+        <div class="formula-result">
+            230 × 8.4 = 1932 VA
+        </div>
+
+    </div>
+
+
+    <div class="practical-lab">
+
+        <div class="lab-header">
+
+            <div class="lab-tag">
+                🛠 PRACTICAL LAB 05
+            </div>
+
+            <h2>Create a Lambda Function</h2>
+
+        </div>
+
+
+        <div class="official-reference">
+
+            <div class="reference-image">
+
+                <img
+                    src="https://docs.aws.amazon.com/images/lambda/latest/dg/images/getting-started-tutorial/nodejs_code_editor.png"
+                    alt="AWS Lambda code editor"
+                >
+
+                <a
+                    href="https://docs.aws.amazon.com/lambda/latest/dg/getting-started.html"
+                    target="_blank"
+                >
+                    Open official Lambda tutorial ↗
+                </a>
+
+            </div>
+
+            <div class="reference-text">
+
+                <span class="reference-label">
+                    REAL AWS REFERENCE
+                </span>
+
+                <h3>Lambda code editor</h3>
+
+                <p>
+                    AWS provides a built-in console editor for
+                    supported interpreted runtimes.
+                </p>
+
+            </div>
+
+        </div>
+
+
+    <div class="practical-lab">
+
+        <div class="lab-header">
+
+            <div class="lab-tag">
+                🛠 PRACTICAL LAB 05
+            </div>
+
+            <h2>Create & Deploy an AWS Lambda Telemetry Processor</h2>
+
+            <p>
+                Learn how to open AWS Lambda, configure execution roles, write Python calculations for telemetry (Voltage × Current = Power), deploy code, and test execution.
+            </p>
+
+        </div>
+
+
+        <!-- REAL-TIME CONSOLE IMAGE CARD -->
+        <div class="console-image-card">
+            <div class="console-image-header">
+                <div class="console-image-title">
+                    <span class="console-badge">AWS Lambda Console Visual</span>
+                    <strong>AWS Lambda — Function Dashboard & Inline Editor</strong>
+                </div>
+                <button class="image-zoom-btn">🔍 Click to Expand</button>
+            </div>
+            <div class="console-image-wrapper">
+                <img src="images/aws_lambda_console.png" alt="AWS Lambda Function Editor Console Screen">
+            </div>
+            <div class="image-caption">
+                <strong>Console Reference:</strong> Create a function named <code>eee-telemetry-processor</code> with Python 3.12 runtime. Use the built-in code editor tab to write serverless logic.
+            </div>
+        </div>
+
+
+        <div class="step" id="step-mod-4-0">
+
+            <div class="step-number">1</div>
+
+            <div class="step-content">
+
+                <h3>Open the AWS Lambda Console</h3>
+
+                <div class="console-path-badge">
+                    🔍 Console Search Bar ➔ Type 'Lambda' ➔ Select Lambda
+                </div>
+
+                <ul class="sub-step-list">
+                    <li>In the top search bar, type <code>Lambda</code>.</li>
+                    <li>Select <strong>Lambda</strong> under Services.</li>
+                    <li>In the left panel or landing dashboard, click <strong>Functions</strong>.</li>
+                    <li>Click the orange <strong>Create function</strong> button in the top right.</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <div class="step" id="step-mod-4-1">
+
+            <div class="step-number">2</div>
+
+            <div class="step-content">
+
+                <h3>Configure Function Name, Runtime & Execution Role</h3>
+
+                <div class="console-path-badge">
+                    ⚙️ Create Function Wizard ➔ Author from scratch
+                </div>
+
+                <ul class="sub-step-list">
+                    <li>Keep <strong>Author from scratch</strong> selected.</li>
+                    <li>In <strong>Function name</strong>, enter:</li>
+                </ul>
+
+                <div class="copy-box">
+                    <code>eee-telemetry-processor</code>
+                    <button class="copy-btn">Copy</button>
+                </div>
+
+                <ul class="sub-step-list">
+                    <li>In <strong>Runtime</strong>, select <strong>Python 3.12</strong> (or Python 3.11).</li>
+                    <li>In <strong>Architecture</strong>, keep <code>x86_64</code>.</li>
+                    <li>Under <strong>Permissions</strong>, select <em>Create a new role with basic Lambda permissions</em> (automatically creates IAM role for CloudWatch logs).</li>
+                    <li>Click <strong>Create function</strong> at the bottom.</li>
+                </ul>
+
+                <div class="expected">
+                    <strong>Expected result:</strong> Green status banner: <code>Successfully created function eee-telemetry-processor</code>.
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="step" id="step-mod-4-2">
+
+            <div class="step-number">3</div>
+
+            <div class="step-content">
+
+                <h3>Write EEE Telemetry Code in the Built-In Editor</h3>
+
+                <div class="console-path-badge">
+                    💻 Code Tab ➔ Code source editor ➔ lambda_function.py
+                </div>
+
+                <p>
+                    Scroll down to the <strong>Code source</strong> section. Double-click <code>lambda_function.py</code>, clear existing code, and paste the Python code below:
+                </p>
+
+<pre><code>import json
+
+def lambda_handler(event, context):
+    print("Received telemetry payload:", json.dumps(event))
+    
+    # Extract electrical metrics
+    voltage = float(event.get('voltage', 0))
+    current = float(event.get('current', 0))
+    
+    # EEE Calculation: Power P = V * I
+    power_watts = voltage * current
+    
+    # Overpower protection logic (> 2500W threshold)
+    status = "OVERLOAD_ALERT" if power_watts > 2500 else "NORMAL"
+    
+    response = {
+        'statusCode': 200,
+        'voltage': voltage,
+        'current': current,
+        'power_watts': round(power_watts, 2),
+        'status': status
+    }
+    
+    print("Calculated Response:", response)
+    return response</code></pre>
+
+            </div>
+
+        </div>
+
+
+        <div class="step" id="step-mod-4-3">
+
+            <div class="step-number">4</div>
+
+            <div class="step-content">
+
+                <h3>Deploy & Test Your Lambda Function</h3>
+
+                <div class="console-path-badge">
+                    🚀 Code Source Toolbar ➔ Click [ Deploy ] ➔ Click [ Test ]
+                </div>
+
+                <ul class="sub-step-list">
+                    <li>Click the orange <strong>Deploy</strong> button above the code editor to compile and save your code into AWS.</li>
+                    <li>Click <strong>Test</strong> button (or select <em>Configure test event</em>).</li>
+                    <li>In <strong>Event name</strong>, enter <code>OverloadTestEvent</code>.</li>
+                    <li>In <strong>Event JSON</strong> payload area, paste:</li>
+                </ul>
+
+                <div class="copy-box">
+                    <code>{"voltage": 240, "current": 12.5}</code>
+                    <button class="copy-btn">Copy Test Payload</button>
+                </div>
+
+                <ul class="sub-step-list">
+                    <li>Click <strong>Save</strong>, then click <strong>Test</strong>.</li>
+                    <li>Expand the <strong>Execution result: succeeded</strong> panel.</li>
+                </ul>
+
+                <div class="expected">
+                    <strong>Expected calculation check:</strong> Power = 240V × 12.5A = 3000W ➔ Status: <code>OVERLOAD_ALERT</code>!
+                </div>
+
+            </div>
+
+        </div>
+
+                <strong>NORMAL</strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="result-box">
+
+            <h3>✅ Expected Result</h3>
+
+            <p>
+                Lambda receives the JSON event, performs the
+                engineering calculation and returns the result.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="quiz-card">
+
+        <div class="quiz-title">📝 Quick Check</div>
+
+        <p>
+            Which statement best describes Lambda?
+        </p>
+
+        <button class="quiz-option" data-answer="correct">
+            Event-driven serverless compute
+        </button>
+
+        <button class="quiz-option" data-answer="wrong">
+            Physical electrical storage
+        </button>
+
+        <button class="quiz-option" data-answer="wrong">
+            A networking cable
+        </button>
+
+        <div class="quiz-result"></div>
+
+    </div>
+
+
+    <div class="lesson-end">
+
+        <span>MODULE 05 COMPLETE</span>
+
+        <button class="next-module">
+            Continue to Module 06 →
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     MODULE 6 — S3
+========================================================= -->
+
+<section class="module" data-module="5">
+
+    <div class="module-header">
+
+        <div class="module-number">MODULE 06</div>
+
+        <h1>Amazon S3</h1>
+
+        <p class="module-intro">
+            Store engineering files, reports, raw telemetry archives,
+            exported datasets and other objects in cloud storage.
+        </p>
+
+    </div>
+
+
+    <div class="lesson">
+
+        <div class="lesson-label">06.1 — STORAGE CONCEPT</div>
+
+    <!-- UNIVERSAL SERVICE OVERVIEW & THEORY CARD -->
+    <div class="service-overview-card">
+        <div class="overview-header">
+            <div class="service-icon-badge">🪣</div>
+            <div>
+                <span class="overview-tag">MODULE 06 — AMAZON S3 (CLOUD STORAGE) THEORY</span>
+                <h2>What is Amazon S3 & Why Use It?</h2>
+            </div>
+        </div>
+
+        <div class="overview-section">
+            <h3>💡 What is this service? (In Plain English)</h3>
+            <p>Amazon S3 (Simple Storage Service) is an object storage service designed to store and retrieve any amount of digital data—such as sensor log files, CSV telemetry archives, equipment manuals, and waveform images—from anywhere on the internet.</p>
+        </div>
+
+        <div class="overview-grid">
+            <div class="overview-box use-case">
+                <h4>🎯 Why Use It? (Key Benefits)</h4>
+                <ul>
+                    <li><strong>11 Nines Durability (99.999999999%):</strong> Objects are replicated across multiple isolated data centers, protecting data against physical drive failures.</li><li><strong>Unlimited Capacity:</strong> Store files ranging from 1 KB JSON payloads to petabytes of historical grid data with no storage ceiling.</li><li><strong>Cost-Effective Lifecycle Tiering:</strong> Automatically move older telemetry archives to S3 Glacier for pennies per gigabyte.</li><li><strong>Enterprise Data Security:</strong> Block Public Access by default, server-side encryption (SSE-S3 AES-256), and fine-grained access policies.</li>
+                </ul>
+            </div>
+
+            <div class="overview-box vs-traditional">
+                <h4>🏭 Traditional vs Cloud Solution</h4>
+                <div class="vs-comparison">
+                    <div class="vs-item old">
+                        <strong>Traditional EEE:</strong> Saving telemetry logs on local PC hard drives or SD cards that corrupt, fill up, or get damaged in laboratory environments.
+                    </div>
+                    <div class="vs-item new">
+                        <strong>With AWS:</strong> Infinitely scalable cloud object store with global accessibility, multi-datacenter redundancy, and automatic encryption.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="engineering-example-card">
+            <div class="example-badge">⚡ Real-World EEE Application</div>
+            <p>Substation Oscillography Archiving: High-speed 100Hz fault recorders at an electrical substation upload daily `.JSON` log files to an S3 bucket named `eee-substation-logs-2026` for long-term power quality auditing.</p>
+        </div>
+
+        <div class="concepts-pills">
+            <h4>🔑 Key Concepts You Need To Know:</h4>
+            <div class="pills-container">
+                <div class="pill"><strong>Bucket:</strong> Top-level container for storing objects in S3 (must have a globally unique name across all AWS accounts).</div><div class="pill"><strong>Object:</strong> The fundamental entity stored in S3, consisting of file data, metadata, and a unique key.</div><div class="pill"><strong>Key:</strong> The unique string path identifying an object within a bucket (e.g. `2026/09/transformer-01.json`).</div><div class="pill"><strong>SSE-S3 Encryption:</strong> Server-Side Encryption using Amazon S3 Managed Encryption Keys (AES-256).</div>
+            </div>
+        </div>
+    </div>
+
+
+
+        <h2>Bucket → Object → Key</h2>
+
+        <div class="storage-model">
+
+            <div>
+                <span>🪣</span>
+                <strong>Bucket</strong>
+                <p>
+                    Container for objects.
+                </p>
+            </div>
+
+            <div class="storage-arrow">→</div>
+
+            <div>
+                <span>📄</span>
+                <strong>Object</strong>
+                <p>
+                    Stored file/data.
+                </p>
+            </div>
+
+            <div class="storage-arrow">→</div>
+
+            <div>
+                <span>🔑</span>
+                <strong>Key</strong>
+                <p>
+                    Object's name/path.
+                </p>
+            </div>
+
+        </div>
+
+
+        <h3>EEE Example</h3>
+
+<pre><code>bucket:
+eee-transformer-data
+
+object:
+2026/09/04/transformer-01.json</code></pre>
+
+        <p>
+            The object could contain telemetry collected from
+            an electrical device.
+        </p>
+
+    </div>
+
+
+    <div class="practical-lab">
+
+        <div class="lab-header">
+
+            <div class="lab-tag">
+                🛠 PRACTICAL LAB 06
+            </div>
+
+            <h2>Create & Configure an Amazon S3 Cloud Storage Bucket</h2>
+
+            <p>
+                Learn how to open Amazon S3, set globally unique bucket names, configure security & encryption options, and upload telemetry log files.
+            </p>
+
+        </div>
+
+
+        <!-- REAL-TIME CONSOLE IMAGE CARD -->
+        <div class="console-image-card">
+            <div class="console-image-header">
+                <div class="console-image-title">
+                    <span class="console-badge">AWS S3 Console Visual</span>
+                    <strong>Amazon S3 — Create Bucket Dashboard</strong>
+                </div>
+                <button class="image-zoom-btn">🔍 Click to Expand</button>
+            </div>
+            <div class="console-image-wrapper">
+                <img src="images/aws_s3_console.png" alt="Amazon S3 Create Bucket Console Screen">
+            </div>
+            <div class="image-caption">
+                <strong>Console Reference:</strong> Bucket names must be globally unique across all AWS accounts worldwide. Keep 'Block all public access' checked for security.
+            </div>
+        </div>
+
+
+        <div class="step" id="step-mod-5-0">
+
+            <div class="step-number">1</div>
+
+            <div class="step-content">
+
+                <h3>Open the Amazon S3 Service Dashboard</h3>
+
+                <div class="console-path-badge">
+                    🔍 Console Search Bar ➔ Type 'S3' ➔ Select S3
+                </div>
+
+                <ul class="sub-step-list">
+                    <li>In the top search bar, type <code>S3</code>.</li>
+                    <li>Click <strong>S3</strong> under Services.</li>
+                    <li>In the left panel, click <strong>Buckets</strong>.</li>
+                    <li>Click the orange <strong>Create bucket</strong> button on the right.</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <div class="step" id="step-mod-5-1">
+
+            <div class="step-number">2</div>
+
+            <div class="step-content">
+
+                <h3>Specify Globally Unique Bucket Name & Region</h3>
+
+                <div class="console-path-badge">
+                    ⚙️ Create Bucket Form ➔ General configuration
+                </div>
+
+                <ul class="sub-step-list">
+                    <li>In <strong>AWS Region</strong>, ensure it matches your workshop region (e.g. <code>us-east-1</code>).</li>
+                    <li>In <strong>Bucket name</strong>, enter a unique lower-case string (e.g., <code>eee-transformer-logs-2026-yourname</code>):</li>
+                </ul>
+
+                <div class="copy-box">
+                    <code>eee-transformer-logs-2026-YOURNAME</code>
+                    <button class="copy-btn">Copy Template</button>
+                </div>
+
+                <div class="warning">
+                    ⚠️ <strong>S3 Naming Rules:</strong> Must contain only lowercase letters, numbers, and hyphens (3 to 63 characters long). No spaces or underscores!
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="step" id="step-mod-5-2">
+
+            <div class="step-number">3</div>
+
+            <div class="step-content">
+
+                <h3>Configure Security & Encryption Options</h3>
+
+                <div class="console-path-badge">
+                    🔒 Block Public Access & Encryption Settings
+                </div>
+
+                <ul class="sub-step-list">
+                    <li>Ensure <strong>Block <em>all</em> public access</strong> checkbox remains <strong>CHECKED</strong>.</li>
+                    <li>Keep <strong>Bucket Versioning</strong> disabled (or enable if tracking historical telemetry revisions).</li>
+                    <li>Keep <strong>Server-side encryption</strong> as <em>Amazon S3 managed keys (SSE-S3)</em>.</li>
+                    <li>Scroll to the bottom and click <strong>Create bucket</strong>.</li>
+                </ul>
+
+                <div class="expected">
+                    <strong>Expected result:</strong> Green status banner: <code>Successfully created bucket "eee-transformer-logs-2026-YOURNAME"</code>.
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="step" id="step-mod-5-3">
+
+            <div class="step-number">4</div>
+
+            <div class="step-content">
+
+                <h3>Upload Sensor Telemetry Log Files</h3>
+
+                <div class="console-path-badge">
+                    📤 Bucket Overview ➔ Objects tab ➔ Click [ Upload ]
+                </div>
+
+                <ul class="sub-step-list">
+                    <li>Click your bucket name from the list to open its details page.</li>
+                    <li>Under the <strong>Objects</strong> tab, click the orange <strong>Upload</strong> button.</li>
+                    <li>Click <strong>Add files</strong> and upload your sample <code>transformer-01.json</code> log file (or drag and drop it into the window).</li>
+                    <li>Click <strong>Upload</strong> at the bottom right.</li>
+                </ul>
+
+                <div class="expected">
+                    <strong>Expected result:</strong> Green notification: <code>Upload succeeded</code>. Your telemetry object is now securely archived in AWS Cloud Storage!
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="security-table">
+
+        <h3>🔐 Storage Security Checklist</h3>
+
+        <div class="security-row header">
+            <span>Setting</span>
+            <span>Workshop guidance</span>
+        </div>
+
+        <div class="security-row">
+            <span>Public access</span>
+            <span>Keep blocked</span>
+        </div>
+
+        <div class="security-row">
+            <span>Bucket name</span>
+            <span>Use unique name</span>
+        </div>
+
+        <div class="security-row">
+            <span>Region</span>
+            <span>Choose carefully</span>
+        </div>
+
+        <div class="security-row">
+            <span>Credentials</span>
+            <span>Never publish private keys</span>
+        </div>
+
+    </div>
+
+
+    <div class="quiz-card">
+
+        <div class="quiz-title">📝 Quick Check</div>
+
+        <p>
+            Amazon S3 is primarily:
+        </p>
+
+        <button class="quiz-option" data-answer="correct">
+            Object storage
+        </button>
+
+        <button class="quiz-option" data-answer="wrong">
+            An electrical relay
+        </button>
+
+        <button class="quiz-option" data-answer="wrong">
+            A programming language
+        </button>
+
+        <div class="quiz-result"></div>
+
+    </div>
+
+
+    <div class="lesson-end">
+
+        <span>MODULE 06 COMPLETE</span>
+
+        <button class="next-module">
+            Continue to Module 07 →
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     MODULE 7 — SNS
+========================================================= -->
+
+<section class="module" data-module="6">
+
+    <div class="module-header">
+
+        <div class="module-number">MODULE 07</div>
+
+        <h1>Amazon SNS</h1>
+
+        <p class="module-intro">
+            Learn how cloud systems broadcast notifications when
+            an engineering event requires human attention.
+        </p>
+
+    </div>
+
+
+    <div class="lesson">
+
+        <h2>Publisher → Topic → Subscribers</h2>
+
+        <div class="sns-diagram">
+
+            <div class="sns-publisher">
+                ⚙️
+                <strong>Publisher</strong>
+                <small>Lambda / application</small>
+            </div>
+
+    <!-- UNIVERSAL SERVICE OVERVIEW & THEORY CARD -->
+    <div class="service-overview-card">
+        <div class="overview-header">
+            <div class="service-icon-badge">📢</div>
+            <div>
+                <span class="overview-tag">MODULE 07 — AMAZON SNS (NOTIFICATIONS) THEORY</span>
+                <h2>What is Amazon SNS & Why Use It?</h2>
+            </div>
+        </div>
+
+        <div class="overview-section">
+            <h3>💡 What is this service? (In Plain English)</h3>
+            <p>Amazon SNS (Simple Notification Service) is a publish/subscribe (Pub/Sub) messaging service that delivers urgent alert notifications—via Email, SMS text message, mobile push, or HTTP endpoints—immediately when an engineering anomaly or alarm occurs.</p>
+        </div>
+
+        <div class="overview-grid">
+            <div class="overview-box use-case">
+                <h4>🎯 Why Use It? (Key Benefits)</h4>
+                <ul>
+                    <li><strong>Instant Push Delivery:</strong> Delivers critical fault notifications directly to duty engineers' mobile phones in milliseconds.</li><li><strong>Fan-Out Pattern:</strong> A single message published to an SNS Topic can simultaneously send an Email to an engineer, an SMS to a technician, and trigger a Lambda function for automated shutdown.</li><li><strong>Decoupled Alerting:</strong> Producers don't need to know who receives alerts—SNS handles subscriber dispatch automatically.</li>
+                </ul>
+            </div>
+
+            <div class="overview-box vs-traditional">
+                <h4>🏭 Traditional vs Cloud Solution</h4>
+                <div class="vs-comparison">
+                    <div class="vs-item old">
+                        <strong>Traditional EEE:</strong> Writing complex, fragile SMTP email code in microcontroller C++ that fails when local Wi-Fi drops.
+                    </div>
+                    <div class="vs-item new">
+                        <strong>With AWS:</strong> Managed cloud alert hub that dispatches SMS, Email, and webhook alerts reliably across multiple channels.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="engineering-example-card">
+            <div class="example-badge">⚡ Real-World EEE Application</div>
+            <p>High-Voltage Transformer Thermal Overload Alert: When Lambda detects oil temperature > 90°C, it publishes an alert payload to the `eee-transformer-alerts` SNS topic. SNS immediately sends an SMS to the power station engineer.</p>
+        </div>
+
+        <div class="concepts-pills">
+            <h4>🔑 Key Concepts You Need To Know:</h4>
+            <div class="pills-container">
+                <div class="pill"><strong>Topic:</strong> Logical access point and communication channel to which publishers send messages.</div><div class="pill"><strong>Publisher:</strong> Service or function (e.g. AWS Lambda) that originates notification messages to an SNS topic.</div><div class="pill"><strong>Subscriber:</strong> End recipient (Email address, SMS phone number, SQS queue, Lambda function) subscribed to a topic.</div><div class="pill"><strong>Fan-Out Pattern:</strong> Publishing 1 message to an SNS topic to fan out delivery to multiple heterogeneous endpoints.</div>
+            </div>
+        </div>
+    </div>
+
+
+
+            <span>→</span>
+
+            <div class="sns-topic">
+                🔔
+                <strong>SNS Topic</strong>
+                <small>EEE-Alerts</small>
+            </div>
+
+            <span>→</span>
+
+            <div class="sns-subscribers">
+
+                <div>📧 Email</div>
+                <div>📱 SMS</div>
+                <div>📨 Other subscribers</div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="practical-lab">
+
+        <div class="lab-header">
+
+            <div class="lab-tag">
+                🛠 PRACTICAL LAB 07
+            </div>
+
+            <h2>Create & Configure an Amazon SNS Notification Topic</h2>
+
+            <p>
+                Learn how to open Amazon SNS, create alert broadcast topics, add email subscribers, confirm subscriptions, and publish instant emergency notification messages.
+            </p>
+
+        </div>
+
+
+        <!-- REAL-TIME CONSOLE IMAGE CARD -->
+        <div class="console-image-card">
+            <div class="console-image-header">
+                <div class="console-image-title">
+                    <span class="console-badge">AWS SNS Console Visual</span>
+                    <strong>Amazon SNS — Topic & Subscription Management</strong>
+                </div>
+                <button class="image-zoom-btn">🔍 Click to Expand</button>
+            </div>
+            <div class="console-image-wrapper">
+                <img src="images/aws_sns_console.png" alt="Amazon SNS Create Topic Console Screen">
+            </div>
+            <div class="image-caption">
+                <strong>Console Reference:</strong> Create a Standard Topic named <code>EEE-Grid-Alerts</code>, then add an Email subscription to deliver fault alerts to engineers.
+            </div>
+        </div>
+
+
+        <div class="step" id="step-mod-6-0">
+
+            <div class="step-number">1</div>
+
+            <div class="step-content">
+
+                <h3>Open the Amazon SNS Dashboard</h3>
+
+                <div class="console-path-badge">
+                    🔍 Console Search Bar ➔ Type 'SNS' ➔ Select Simple Notification Service
+                </div>
+
+                <ul class="sub-step-list">
+                    <li>In the top console search bar, type <code>SNS</code>.</li>
+                    <li>Select <strong>Simple Notification Service</strong>.</li>
+                    <li>In the left panel, click <strong>Topics</strong>.</li>
+                    <li>Click the orange <strong>Create topic</strong> button.</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <div class="step" id="step-mod-6-1">
+
+            <div class="step-number">2</div>
+
+            <div class="step-content">
+
+                <h3>Specify Topic Type & Name</h3>
+
+                <div class="console-path-badge">
+                    ⚙️ Create Topic Form ➔ Details section
+                </div>
+
+                <ul class="sub-step-list">
+                    <li>Under <strong>Type</strong>, select <strong>Standard</strong> radio button (allows multiple protocols: Email, SMS, HTTP webhook, Lambda, SQS).</li>
+                    <li>In the <strong>Name</strong> input field, enter:</li>
+                </ul>
+
+                <div class="copy-box">
+                    <code>EEE-Grid-Alerts</code>
+                    <button class="copy-btn">Copy</button>
+                </div>
+
+                <ul class="sub-step-list">
+                    <li>Keep <strong>Display name</strong> as <code>EEE-Alerts</code> (shown in SMS header).</li>
+                    <li>Scroll down and click <strong>Create topic</strong>.</li>
+                </ul>
+
+                <div class="expected">
+                    <strong>Expected result:</strong> Topic page opens displaying your topic ARN: <code>arn:aws:sns:us-east-1:ACCOUNT_ID:EEE-Grid-Alerts</code>.
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="step" id="step-mod-6-2">
+
+            <div class="step-number">3</div>
+
+            <div class="step-content">
+
+                <h3>Create Email Subscription</h3>
+
+                <div class="console-path-badge">
+                    📧 Topic Details Page ➔ Subscriptions tab ➔ Click [ Create subscription ]
+                </div>
+
+                <ul class="sub-step-list">
+                    <li>Click the orange <strong>Create subscription</strong> button.</li>
+                    <li>Ensure Topic ARN matches <code>EEE-Grid-Alerts</code>.</li>
+                    <li>Under <strong>Protocol</strong>, select <strong>Email</strong>.</li>
+                    <li>In the <strong>Endpoint</strong> field, enter your valid email address:</li>
+                </ul>
+
+                <div class="copy-box">
+                    <code>yourname@example.com</code>
+                    <button class="copy-btn">Copy Placeholder</button>
+                </div>
+
+                <ul class="sub-step-list">
+                    <li>Click <strong>Create subscription</strong>.</li>
+                </ul>
+
+                <div class="warning">
+                    ⚠️ <strong>Status Check:</strong> The subscription status will initially show <code>PendingConfirmation</code>.
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="step" id="step-mod-6-3">
+
+            <div class="step-number">4</div>
+
+            <div class="step-content">
+
+                <h3>Confirm Email Subscription & Publish Test Alert</h3>
+
+                <div class="console-path-badge">
+                    📬 Personal Email Inbox ➔ Click 'Confirm subscription' ➔ Return to SNS Console
+                </div>
+
+                <ul class="sub-step-list">
+                    <li>Open your personal email inbox, find the message from <strong>AWS Notifications</strong>, and click <strong>Confirm subscription</strong>.</li>
+                    <li>Return to the SNS Console and refresh. Status changes to <strong>Confirmed</strong>!</li>
+                    <li>On your topic page, click <strong>Publish message</strong> button in the top right.</li>
+                    <li>In <strong>Subject</strong> enter <code>HIGH VOLTAGE ALERT - SUBSTATION 01</code>.</li>
+                    <li>In <strong>Message body</strong> enter <code>WARNING: Phase A voltage exceeded 250V safety limit! Automatic shutdown initiated.</code></li>
+                    <li>Click <strong>Publish message</strong>.</li>
+                </ul>
+
+                <div class="expected">
+                    <strong>Expected result:</strong> Check your email inbox — you will receive the emergency alert email within 5 seconds!
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="comparison">
+
+        <div class="comparison-box">
+
+            <div class="comparison-heading">
+                SQS
+            </div>
+
+            <p>
+                Think:
+                <strong>“Wait and process.”</strong>
+            </p>
+
+            <ul>
+                <li>Queue</li>
+                <li>Buffer</li>
+                <li>Consumer processes message</li>
+            </ul>
+
+        </div>
+
+        <div class="comparison-box">
+
+            <div class="comparison-heading">
+                SNS
+            </div>
+
+            <p>
+                Think:
+                <strong>“Broadcast and notify.”</strong>
+            </p>
+
+            <ul>
+                <li>Topic</li>
+                <li>Fan-out</li>
+                <li>Subscribers receive notification</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+
+    <div class="quiz-card">
+
+        <div class="quiz-title">📝 Quick Check</div>
+
+        <p>
+            Which service is designed around topics and subscribers?
+        </p>
+
+        <button class="quiz-option" data-answer="correct">
+            Amazon SNS
+        </button>
+
+        <button class="quiz-option" data-answer="wrong">
+            Amazon S3
+        </button>
+
+        <button class="quiz-option" data-answer="wrong">
+            Amazon EC2
+        </button>
+
+        <div class="quiz-result"></div>
+
+    </div>
+
+
+    <div class="lesson-end">
+
+        <span>MODULE 07 COMPLETE</span>
+
+        <button class="next-module">
+            Continue to Module 08 →
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     MODULE 8 — CLOUDWATCH
+========================================================= -->
+
+<section class="module" data-module="7">
+
+    <div class="module-header">
+
+        <div class="module-number">MODULE 08</div>
+
+        <h1>Amazon CloudWatch</h1>
+
+        <p class="module-intro">
+            Monitoring is essential when cloud systems become part
+            of engineering infrastructure.
+        </p>
+
+    </div>
+
+
+    <div class="lesson">
+
+        <h2>Metrics + Logs + Alarms</h2>
+
+        <div class="monitor-grid">
+
+            <div>
+                <span>📈</span>
+                <h3>Metrics</h3>
+                <p>
+                    Numerical measurements of system behaviour.
+                </p>
+            </div>
+
+    <!-- UNIVERSAL SERVICE OVERVIEW & THEORY CARD -->
+    <div class="service-overview-card">
+        <div class="overview-header">
+            <div class="service-icon-badge">📊</div>
+            <div>
+                <span class="overview-tag">MODULE 08 — AMAZON CLOUDWATCH (MONITORING) THEORY</span>
+                <h2>What is Amazon CloudWatch & Why Use It?</h2>
+            </div>
+        </div>
+
+        <div class="overview-section">
+            <h3>💡 What is this service? (In Plain English)</h3>
+            <p>Amazon CloudWatch is a monitoring and observability service that acts as the central control room and digital oscilloscope for your cloud infrastructure and connected EEE devices, tracking real-time metrics, log files, and threshold alarms.</p>
+        </div>
+
+        <div class="overview-grid">
+            <div class="overview-box use-case">
+                <h4>🎯 Why Use It? (Key Benefits)</h4>
+                <ul>
+                    <li><strong>Real-Time Visual Dashboards:</strong> Create custom graphs for telemetry message counts, voltage stability, CPU load, and execution delays.</li><li><strong>Proactive Threshold Alarms:</strong> Set automated alarms (e.g. alert if message error rate > 5% for 2 minutes) to trigger SNS alerts.</li><li><strong>Centralized Log Aggregation:</strong> Collect, search, and troubleshoot log streams from microcontrollers, Lambda functions, and servers in one window.</li>
+                </ul>
+            </div>
+
+            <div class="overview-box vs-traditional">
+                <h4>🏭 Traditional vs Cloud Solution</h4>
+                <div class="vs-comparison">
+                    <div class="vs-item old">
+                        <strong>Traditional EEE:</strong> Manually connecting serial debuggers or SSHing into local machines to diagnose why a device stopped sending data.
+                    </div>
+                    <div class="vs-item new">
+                        <strong>With AWS:</strong> Unified cloud observability dashboard with automated alarm triggers and real-time metric visualization.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="engineering-example-card">
+            <div class="example-badge">⚡ Real-World EEE Application</div>
+            <p>Solar PV Plant Output Monitoring: CloudWatch tracks total active power (kW) generated by a 1MW solar array. If output drops below 100kW during peak noon hours, a CloudWatch Alarm fires and sends an alert via SNS.</p>
+        </div>
+
+        <div class="concepts-pills">
+            <h4>🔑 Key Concepts You Need To Know:</h4>
+            <div class="pills-container">
+                <div class="pill"><strong>Metric:</strong> Time-series numerical data point (e.g., CPUUtilization, TelemetryMessageCount, Temperature).</div><div class="pill"><strong>CloudWatch Alarm:</strong> Rule that monitors a single metric over a specified period and performs automated actions.</div><div class="pill"><strong>Log Group / Log Stream:</strong> Organized container for storing textual debug logs emitted by Lambda functions or servers.</div><div class="pill"><strong>Dashboard:</strong> Customizable grid of visual charts displaying system metrics in real time.</div>
+            </div>
+        </div>
+    </div>
+
+
+
+            <div>
+                <span>📜</span>
+                <h3>Logs</h3>
+                <p>
+                    Records generated by applications and services.
+                </p>
+            </div>
+
+            <div>
+                <span>🚨</span>
+                <h3>Alarms</h3>
+                <p>
+                    Trigger when defined conditions are met.
+                </p>
+            </div>
+
+        </div>
+
+
+        <div class="important-note">
+
+            <strong>Important engineering distinction</strong>
+
+            <p>
+                CloudWatch does not automatically know the raw voltage
+                of a physical sensor just because the sensor exists.
+                The telemetry or application must publish appropriate
+                metrics/logs for monitoring.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="practical-lab">
+
+        <div class="lab-header">
+
+            <div class="lab-tag">
+                🛠 PRACTICAL LAB 08
+            </div>
+
+            <h2>Inspect CloudWatch Logs & Build Overvoltage Alarms</h2>
+
+            <p>
+                Learn how to open AWS CloudWatch, locate Lambda execution logs, inspect telemetry metrics, and build automated CloudWatch Alarms for overvoltage protection.
+            </p>
+
+        </div>
+
+
+        <!-- REAL-TIME CONSOLE IMAGE CARD -->
+        <div class="console-image-card">
+            <div class="console-image-header">
+                <div class="console-image-title">
+                    <span class="console-badge">AWS CloudWatch Console Visual</span>
+                    <strong>AWS CloudWatch — Telemetry Dashboard & Active Alarms</strong>
+                </div>
+                <button class="image-zoom-btn">🔍 Click to Expand</button>
+            </div>
+            <div class="console-image-wrapper">
+                <img src="images/aws_cloudwatch_console.png" alt="AWS CloudWatch Metrics & Alarm Console Screen">
+            </div>
+            <div class="image-caption">
+                <strong>Console Reference:</strong> CloudWatch collects logs, metrics, and events. Set automated alarms to trigger SNS notifications when telemetry thresholds are breached.
+            </div>
+        </div>
+
+
+        <div class="step" id="step-mod-7-0">
+
+            <div class="step-number">1</div>
+
+            <div class="step-content">
+
+                <h3>Open the AWS CloudWatch Console</h3>
+
+                <div class="console-path-badge">
+                    🔍 Console Search Bar ➔ Type 'CloudWatch' ➔ Select CloudWatch
+                </div>
+
+                <ul class="sub-step-list">
+                    <li>In the top search bar, type <code>CloudWatch</code>.</li>
+                    <li>Select <strong>CloudWatch</strong> under Services.</li>
+                    <li>Explore the left sidebar: <strong>Alarms</strong>, <strong>Logs</strong>, <strong>Metrics</strong>, <strong>Dashboards</strong>.</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <div class="step" id="step-mod-7-1">
+
+            <div class="step-number">2</div>
+
+            <div class="step-content">
+
+                <h3>Inspect Lambda Log Groups & Streams</h3>
+
+                <div class="console-path-badge">
+                    📑 Left Sidebar ➔ Logs ➔ Log groups ➔ /aws/lambda/eee-telemetry-processor
+                </div>
+
+                <ul class="sub-step-list">
+                    <li>In the left panel under <strong>Logs</strong>, click <strong>Log groups</strong>.</li>
+                    <li>Find and click <code>/aws/lambda/eee-telemetry-processor</code>.</li>
+                    <li>Click on the latest <strong>Log stream</strong>.</li>
+                    <li>Inspect the print statements (e.g. <code>Received telemetry payload</code>, <code>Calculated Response</code>, execution duration, and memory used).</li>
+                </ul>
+
+                <div class="expected">
+                    <strong>Expected result:</strong> You can trace every single execution event, input payload, and error stack trace for your cloud function!
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="step" id="step-mod-7-2">
+
+            <div class="step-number">3</div>
+
+            <div class="step-content">
+
+                <h3>Create a Metric Filter for Voltage Overloads</h3>
+
+                <div class="console-path-badge">
+                    ⚡ Log Group Details ➔ Metric filters tab ➔ Click [ Create metric filter ]
+                </div>
+
+                <ul class="sub-step-list">
+                    <li>On your Log group page, click the <strong>Metric filters</strong> tab.</li>
+                    <li>Click <strong>Create metric filter</strong>.</li>
+                    <li>In <strong>Filter pattern</strong>, enter <code>"OVERLOAD_ALERT"</code>.</li>
+                    <li>Click <strong>Next</strong>, enter Metric Name <code>VoltageOverloadCount</code>, Namespace <code>EEE/SubstationMetrics</code>, Value <code>1</code>.</li>
+                    <li>Click <strong>Create metric filter</strong>.</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <div class="step" id="step-mod-7-3">
+
+            <div class="step-number">4</div>
+
+            <div class="step-content">
+
+                <h3>Build a CloudWatch Alarm & Attach SNS Action</h3>
+
+                <div class="console-path-badge">
+                    🚨 Left Sidebar ➔ Alarms ➔ All alarms ➔ Click [ Create alarm ]
+                </div>
+
+                <ul class="sub-step-list">
+                    <li>In the left panel under <strong>Alarms</strong>, click <strong>All alarms</strong> and choose <strong>Create alarm</strong>.</li>
+                    <li>Click <strong>Select metric</strong> ➔ Choose <code>EEE/SubstationMetrics</code> ➔ Select <code>VoltageOverloadCount</code>.</li>
+                    <li>Under <strong>Threshold conditions</strong>, set Whenever <code>VoltageOverloadCount</code> is <strong>Greater/Equal (&ge;) 1</strong> for 1 data point.</li>
+                    <li>Click <strong>Next</strong>. Under <strong>Alarm state trigger</strong>, select <strong>In alarm</strong>.</li>
+                    <li>Under <strong>Send a notification to...</strong>, choose <em>Select an existing SNS topic</em> and pick <code>EEE-Grid-Alerts</code>!</li>
+                    <li>Enter Alarm name <code>Substation-Voltage-Critical-Alarm</code> and click <strong>Create alarm</strong>.</li>
+                </ul>
+
+                <div class="expected">
+                    <strong>Expected result:</strong> Your automated cloud protective relay is live! If an overpower event occurs in Lambda, CloudWatch automatically fires your SNS email alert within seconds!
+                </div>
+
+            </div>
+
+        </div>
+
+
+    <div class="troubleshooting">
+
+        <h2>🔎 If Something Fails</h2>
+
+        <div class="trouble-row">
+
+            <strong>No logs</strong>
+
+            <p>
+                Check whether the function actually executed and
+                whether its execution role permits log delivery.
+            </p>
+
+        </div>
+
+        <div class="trouble-row">
+
+            <strong>No metric</strong>
+
+            <p>
+                Confirm that the relevant service/application is
+                publishing the metric you are looking for.
+            </p>
+
+        </div>
+
+        <div class="trouble-row">
+
+            <strong>Alarm not triggering</strong>
+
+            <p>
+                Check the metric, threshold, period and alarm state.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="quiz-card">
+
+        <div class="quiz-title">📝 Quick Check</div>
+
+        <p>
+            Which combination represents common CloudWatch
+            monitoring concepts?
+        </p>
+
+        <button class="quiz-option" data-answer="correct">
+            Metrics, Logs and Alarms
+        </button>
+
+        <button class="quiz-option" data-answer="wrong">
+            Voltage, resistor and capacitor
+        </button>
+
+        <button class="quiz-option" data-answer="wrong">
+            Only S3 buckets
+        </button>
+
+        <div class="quiz-result"></div>
+
+    </div>
+
+
+    <div class="lesson-end">
+
+        <span>MODULE 08 COMPLETE</span>
+
+        <button class="next-module">
+            Continue to Module 09 →
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     MODULE 9 — EC2
+========================================================= -->
+
+<section class="module" data-module="8">
+
+    <div class="module-header">
+
+        <div class="module-number">MODULE 09</div>
+
+        <h1>Amazon EC2</h1>
+
+        <p class="module-intro">
+            Learn when an electrical engineering application needs
+            a virtual server with operating-system-level control.
+        </p>
+
+    </div>
+
+
+    <div class="lesson">
+
+        <h2>What is EC2?</h2>
+
+        <p>
+            Amazon EC2 provides virtual compute instances that
+            can run operating systems and applications.
+        </p>
+
+
+        <div class="ec2-concept">
+
+            <div>
+                <span>🖥️</span>
+                <strong>Virtual Server</strong>
+            </div>
+
+    <!-- UNIVERSAL SERVICE OVERVIEW & THEORY CARD -->
+    <div class="service-overview-card">
+        <div class="overview-header">
+            <div class="service-icon-badge">🖥️</div>
+            <div>
+                <span class="overview-tag">MODULE 09 — AMAZON EC2 (VIRTUAL SERVERS) THEORY</span>
+                <h2>What is Amazon EC2 & Why Use It?</h2>
+            </div>
+        </div>
+
+        <div class="overview-section">
+            <h3>💡 What is this service? (In Plain English)</h3>
+            <p>Amazon EC2 (Elastic Compute Cloud) provides resizable virtual machines (servers) in the cloud. It gives you full administrative root control over operating systems (Linux/Windows), CPU cores, RAM, and storage to run continuous heavy engineering workloads.</p>
+        </div>
+
+        <div class="overview-grid">
+            <div class="overview-box use-case">
+                <h4>🎯 Why Use It? (Key Benefits)</h4>
+                <ul>
+                    <li><strong>Full Administrative Root Access:</strong> Install specialized engineering software like SCADA platforms, MATLAB runtime, OpenDSS, or C++ power flow solvers.</li><li><strong>Flexible Compute Specifications:</strong> Choose hardware from 1 vCPU / 1GB RAM up to 128 vCPUs / 512GB RAM with high-performance GPUs.</li><li><strong>Continuous 24/7 Execution:</strong> Ideal for long-running control loops, web server dashboards, and continuous background calculation tasks that exceed Lambda's 15-minute limit.</li>
+                </ul>
+            </div>
+
+            <div class="overview-box vs-traditional">
+                <h4>🏭 Traditional vs Cloud Solution</h4>
+                <div class="vs-comparison">
+                    <div class="vs-item old">
+                        <strong>Traditional EEE:</strong> Buying expensive physical server racks that take weeks to deliver, assemble, and wire in an engineering laboratory.
+                    </div>
+                    <div class="vs-item new">
+                        <strong>With AWS:</strong> Spinning up a dedicated Linux or Windows server with exact CPU/RAM specs in 60 seconds.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="engineering-example-card">
+            <div class="example-badge">⚡ Real-World EEE Application</div>
+            <p>Power System Load Flow Simulator: An EC2 instance running a Linux OS executes a continuous Python OpenDSS simulation script calculating voltage drops and feeder losses across a 5,000-bus distribution network 24/7.</p>
+        </div>
+
+        <div class="concepts-pills">
+            <h4>🔑 Key Concepts You Need To Know:</h4>
+            <div class="pills-container">
+                <div class="pill"><strong>Instance Type:</strong> Hardware combination of CPU, RAM, and network bandwidth (e.g., `t3.micro`, `c6i.xlarge`).</div><div class="pill"><strong>AMI (Amazon Machine Image):</strong> Pre-configured template containing operating system, application server, and software.</div><div class="pill"><strong>Security Group:</strong> Virtual firewall controlling incoming and outgoing traffic rules for your EC2 server.</div><div class="pill"><strong>EBS (Elastic Block Store):</strong> Persistent block storage volume attached to your EC2 virtual server (acts as virtual SSD/HDD).</div>
+            </div>
+        </div>
+    </div>
+
+
+
+            <div>
+                <span>⚙️</span>
+                <strong>Operating System</strong>
+            </div>
+
+            <div>
+                <span>📦</span>
+                <strong>Application</strong>
+            </div>
+
+        </div>
+
+
+        <h3>Important EC2 vocabulary</h3>
+
+        <div class="vocabulary">
+
+            <div>
+                <strong>AMI</strong>
+                <p>Machine image used to launch an instance.</p>
+            </div>
+
+            <div>
+                <strong>Instance type</strong>
+                <p>Defines compute characteristics.</p>
+            </div>
+
+            <div>
+                <strong>Key pair</strong>
+                <p>Used for instance access depending on OS/setup.</p>
+            </div>
+
+            <div>
+                <strong>Security group</strong>
+                <p>Controls network traffic to the instance.</p>
+            </div>
+
+            <div>
+                <strong>EBS</strong>
+                <p>Block storage associated with EC2.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="practical-lab">
+
+        <div class="lab-header">
+
+            <div class="lab-tag">
+                🛠 PRACTICAL LAB 09
+            </div>
+
+            <h2>Launch & Connect to an Amazon EC2 Virtual SCADA Server</h2>
+
+            <p>
+                Learn how to open Amazon EC2, select Linux Machine Images (AMI), choose free-tier instance types, configure Security Groups (ports 22 & 80), and connect via web browser SSH.
+            </p>
+
+        </div>
+
+
+        <!-- REAL-TIME CONSOLE IMAGE CARD -->
+        <div class="console-image-card">
+            <div class="console-image-header">
+                <div class="console-image-title">
+                    <span class="console-badge">AWS EC2 Console Visual</span>
+                    <strong>Amazon EC2 — Launch Instance Wizard</strong>
+                </div>
+                <button class="image-zoom-btn">🔍 Click to Expand</button>
+            </div>
+            <div class="console-image-wrapper">
+                <img src="images/aws_ec2_console.png" alt="Amazon EC2 Launch Instance Console Screen">
+            </div>
+            <div class="image-caption">
+                <strong>Console Reference:</strong> Launch a virtual server running Amazon Linux 2023. Configure Security Group firewall rules to allow SSH (port 22) and HTTP (port 80).
+            </div>
+        </div>
+
+
+        <div class="step" id="step-mod-8-0">
+
+            <div class="step-number">1</div>
+
+            <div class="step-content">
+
+                <h3>Open the Amazon EC2 Console Dashboard</h3>
+
+                <div class="console-path-badge">
+                    🔍 Console Search Bar ➔ Type 'EC2' ➔ Select EC2
+                </div>
+
+                <ul class="sub-step-list">
+                    <li>In the top search bar, type <code>EC2</code>.</li>
+                    <li>Select <strong>EC2</strong> under Services.</li>
+                    <li>On the EC2 Dashboard, click <strong>Instances</strong> in the left sidebar.</li>
+                    <li>Click the orange <strong>Launch instances</strong> button.</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <div class="step" id="step-mod-8-1">
+
+            <div class="step-number">2</div>
+
+            <div class="step-content">
+
+                <h3>Set Instance Name & Select AMI</h3>
+
+                <div class="console-path-badge">
+                    ⚙️ Launch Instance Wizard ➔ Name and tags & Application / OS Image
+                </div>
+
+                <ul class="sub-step-list">
+                    <li>In <strong>Name</strong>, enter:</li>
+                </ul>
+
+                <div class="copy-box">
+                    <code>EEE-SCADA-Server</code>
+                    <button class="copy-btn">Copy Name</button>
+                </div>
+
+                <ul class="sub-step-list">
+                    <li>Under <strong>Application and OS Images (Amazon Machine Image)</strong>, select <strong>Amazon Linux</strong>.</li>
+                    <li>Choose <strong>Amazon Linux 2023 AMI</strong> (marked <em>Free tier eligible</em>).</li>
+                    <li>Under <strong>Instance type</strong>, select <strong><code>t2.micro</code></strong> (or <code>t3.micro</code>, 1 vCPU, 1 GiB Memory).</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <div class="step" id="step-mod-8-2">
+
+            <div class="step-number">3</div>
+
+            <div class="step-content">
+
+                <h3>Configure Key Pair & Security Group Firewall Rules</h3>
+
+                <div class="console-path-badge">
+                    🔑 Key pair & Network settings section
+                </div>
+
+                <ul class="sub-step-list">
+                    <li>Under <strong>Key pair (login)</strong>, choose <em>Create new key pair</em>, enter <code>eee-scada-key</code>, format <code>.pem</code>, and download the key file.</li>
+                    <li>Under <strong>Network settings</strong>, click <strong>Edit</strong>:
+                        <br>• Check <strong>Allow SSH traffic from Anywhere (0.0.0.0/0)</strong> (Port 22)
+                        <br>• Check <strong>Allow HTTP traffic from the internet</strong> (Port 80 for web SCADA dashboard)
+                    </li>
+                    <li>Click <strong>Launch instance</strong> in the bottom right summary card.</li>
+                </ul>
+
+                <div class="expected">
+                    <strong>Expected result:</strong> Green status: <code>Successfully initiated launch of instance (i-0123456789abcdef0)</code>.
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="step" id="step-mod-8-3">
+
+            <div class="step-number">4</div>
+
+            <div class="step-content">
+
+                <h3>Connect via EC2 Instance Connect in Browser</h3>
+
+                <div class="console-path-badge">
+                    🖥 EC2 Instances List ➔ Select Instance ➔ Click [ Connect ]
+                </div>
+
+                <ul class="sub-step-list">
+                    <li>Click <strong>View all instances</strong> and wait until Instance state shows <strong>Running</strong> (green).</li>
+                    <li>Select your instance checkbox and click <strong>Connect</strong> in the top action bar.</li>
+                    <li>Select the <strong>EC2 Instance Connect</strong> tab, keep default username <code>ec2-user</code>, and click <strong>Connect</strong>.</li>
+                </ul>
+
+                <div class="expected">
+                    <strong>Expected result:</strong> A browser-based terminal opens with the Linux shell prompt <code>[ec2-user@ip-... ~]$</code>! You are now directly controlling an AWS cloud server!
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="cleanup-box">
+
+            <h3>🧹 Cleanup</h3>
+
+            <p>
+                If the instance is no longer needed, follow your
+                workshop cleanup procedure.
+            </p>
+
+            <p>
+                Remember:
+                <strong>Stop</strong> and
+                <strong>Terminate</strong>
+                are not the same operation.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="comparison">
+
+        <div class="comparison-box">
+
+            <div class="comparison-heading">
+                AWS Lambda
+            </div>
+
+            <ul>
+                <li>Event-driven</li>
+                <li>Serverless</li>
+                <li>Good for short processing tasks</li>
+                <li>AWS manages infrastructure</li>
+            </ul>
+
+        </div>
+
+
+        <div class="comparison-box">
+
+            <div class="comparison-heading">
+                Amazon EC2
+            </div>
+
+            <ul>
+                <li>Virtual server</li>
+                <li>OS-level control</li>
+                <li>Good for custom/long-running software</li>
+                <li>You manage more of the server environment</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+
+    <div class="quiz-card">
+
+        <div class="quiz-title">📝 Quick Check</div>
+
+        <p>
+            Which AWS service provides virtual servers?
+        </p>
+
+        <button class="quiz-option" data-answer="correct">
+            Amazon EC2
+        </button>
+
+        <button class="quiz-option" data-answer="wrong">
+            Amazon SNS
+        </button>
+
+        <button class="quiz-option" data-answer="wrong">
+            MQTT
+        </button>
+
+        <div class="quiz-result"></div>
+
+    </div>
+
+
+    <div class="lesson-end">
+
+        <span>MODULE 09 COMPLETE</span>
+
+        <button class="next-module">
+            Continue to Module 10 →
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     MODULE 10 — INTEGRATION
+========================================================= -->
+
+<section class="module" data-module="9">
+
+    <div class="module-header">
+
+        <div class="module-number">MODULE 10</div>
+
+        <h1>Complete System Integration</h1>
+
+        <p class="module-intro">
+            Now combine the individual AWS services into one
+            engineering architecture.
+        </p>
+
+    </div>
+
+
+        <!-- REAL-TIME ARCHITECTURE VISUAL CARD -->
+        <div class="console-image-card">
+            <div class="console-image-header">
+                <div class="console-image-title">
+                    <span class="console-badge">System Architecture Visual</span>
+                    <strong>Complete End-to-End EEE Cloud Solution Architecture</strong>
+                </div>
+
+    <!-- UNIVERSAL SERVICE OVERVIEW & THEORY CARD -->
+    <div class="service-overview-card">
+        <div class="overview-header">
+            <div class="service-icon-badge">🏗️</div>
+            <div>
+                <span class="overview-tag">MODULE 10 — SYSTEM INTEGRATION THEORY</span>
+                <h2>End-to-End Cloud Architecture for EEE Systems</h2>
+            </div>
+        </div>
+
+        <div class="overview-section">
+            <h3>💡 What is this service? (In Plain English)</h3>
+            <p>System Integration connects individual AWS building blocks into a seamless, fault-tolerant end-to-end data pipeline—routing physical sensor readings from hardware through cloud buffers, processing functions, storage vaults, and alert systems to live monitoring dashboards.</p>
+        </div>
+
+        <div class="overview-grid">
+            <div class="overview-box use-case">
+                <h4>🎯 Why Use It? (Key Benefits)</h4>
+                <ul>
+                    <li><strong>End-to-End Resilience:</strong> If any single downstream database or notification channel experiences maintenance, SQS buffers data without loss.</li><li><strong>Elastic Scalability:</strong> Handles 1 sensor packet per minute or 100,000 telemetry messages per second seamlessly.</li><li><strong>Complete Automation:</strong> Eliminates manual data entry and provides automated real-time engineering insights.</li>
+                </ul>
+            </div>
+
+            <div class="overview-box vs-traditional">
+                <h4>🏭 Traditional vs Cloud Solution</h4>
+                <div class="vs-comparison">
+                    <div class="vs-item old">
+                        <strong>Traditional EEE:</strong> Monolithic SCADA software running on a single PC where one bug crashes the entire monitoring system.
+                    </div>
+                    <div class="vs-item new">
+                        <strong>With AWS:</strong> Decoupled cloud architecture where IoT Core, SQS, Lambda, S3, SNS, and CloudWatch operate independently and reliably.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="engineering-example-card">
+            <div class="example-badge">⚡ Real-World EEE Application</div>
+            <p>Complete Smart Grid Telemetry Architecture: ESP32 reads Voltage/Current -> AWS IoT Core receives MQTT payload -> SQS buffers message -> Lambda calculates Power Factor -> S3 archives raw JSON -> SNS alerts engineer if Power Factor < 0.85 -> CloudWatch displays live grid dashboard.</p>
+        </div>
+
+        <div class="concepts-pills">
+            <h4>🔑 Key Concepts You Need To Know:</h4>
+            <div class="pills-container">
+                <div class="pill"><strong>Decoupled Pipeline:</strong> Architecture where components function independently via message queues and events.</div><div class="pill"><strong>Fault Tolerance:</strong> Ability of the overall system to continue operating cleanly even if individual components fail.</div><div class="pill"><strong>End-to-End Latency:</strong> Total time taken for a physical measurement at the sensor to trigger a cloud action (typically < 500ms).</div>
+            </div>
+        </div>
+    </div>
+
+
+                <button class="image-zoom-btn">🔍 Click to Expand</button>
+            </div>
+            <div class="console-image-wrapper">
+                <img src="images/aws_architecture_pipeline.png" alt="AWS Cloud Architecture Diagram for EEE">
+            </div>
+            <div class="image-caption">
+                <strong>Architecture Diagram:</strong> Hardware Telemetry Sensors publish via MQTT to AWS IoT Core ➔ AWS IoT Rule routes payloads to Amazon SQS Queue ➔ AWS Lambda processes calculations & logs to S3 ➔ CloudWatch Alarms trigger Amazon SNS Notifications to engineers!
+            </div>
+        </div>
+
+
+    <div class="architecture">
+
+        <div class="architecture-node device">
+            <span>⚡</span>
+            <strong>EEE Sensor</strong>
+            <small>Voltage / Current / Temperature</small>
+        </div>
+
+        <div class="architecture-arrow">↓ MQTT</div>
+
+        <div class="architecture-node iot">
+            <span>☁️</span>
+            <strong>AWS IoT Core</strong>
+            <small>Device communication</small>
+        </div>
+
+        <div class="architecture-arrow">↓ IoT Rule</div>
+
+        <div class="architecture-node sqs">
+            <span>📨</span>
+            <strong>Amazon SQS</strong>
+            <small>Buffer messages</small>
+        </div>
+
+        <div class="architecture-arrow">↓</div>
+
+        <div class="architecture-node lambda">
+            <span>⚙️</span>
+            <strong>AWS Lambda</strong>
+            <small>Process telemetry</small>
+        </div>
+
+
+        <div class="architecture-branches">
+
+            <div class="architecture-node s3">
+                <span>🗄️</span>
+                <strong>Amazon S3</strong>
+                <small>Store data</small>
+            </div>
+
+            <div class="architecture-node cloudwatch">
+                <span>📊</span>
+                <strong>CloudWatch</strong>
+                <small>Monitor</small>
+            </div>
+
+            <div class="architecture-node sns">
+                <span>🔔</span>
+                <strong>Amazon SNS</strong>
+                <small>Alert engineer</small>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="lesson">
+
+        <h2>What Happens When a Sensor Sends Data?</h2>
+
+        <div class="numbered-flow">
+
+            <div>
+                <strong>01</strong>
+                <h3>Sensor measures</h3>
+                <p>
+                    The physical system measures voltage, current,
+                    temperature or another parameter.
+                </p>
+            </div>
+
+            <div>
+                <strong>02</strong>
+                <h3>Device publishes</h3>
+                <p>
+                    The device publishes telemetry using MQTT.
+                </p>
+            </div>
+
+            <div>
+                <strong>03</strong>
+                <h3>IoT Core receives</h3>
+                <p>
+                    AWS IoT Core handles device communication.
+                </p>
+            </div>
+
+            <div>
+                <strong>04</strong>
+                <h3>Rule routes</h3>
+                <p>
+                    An IoT Rule determines where the message goes.
+                </p>
+            </div>
+
+            <div>
+                <strong>05</strong>
+                <h3>SQS buffers</h3>
+                <p>
+                    Messages can wait in a queue.
+                </p>
+            </div>
+
+            <div>
+                <strong>06</strong>
+                <h3>Lambda processes</h3>
+                <p>
+                    Engineering calculations or validation happen.
+                </p>
+            </div>
+
+            <div>
+                <strong>07</strong>
+                <h3>S3 stores</h3>
+                <p>
+                    Data files can be retained for later analysis.
+                </p>
+            </div>
+
+            <div>
+                <strong>08</strong>
+                <h3>CloudWatch monitors</h3>
+                <p>
+                    Logs and metrics help engineers observe the system.
+                </p>
+            </div>
+
+            <div>
+                <strong>09</strong>
+                <h3>SNS alerts</h3>
+                <p>
+                    Important events can be sent to subscribers.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="lesson">
+
+        <h2>Why Decoupling Matters</h2>
+
+        <p>
+            Imagine Lambda temporarily becomes busy.
+            If IoT devices were directly dependent on Lambda,
+            the whole system could become tightly coupled.
+        </p>
+
+        <p>
+            With SQS in the middle, messages can wait while the
+            consumer processes them.
+        </p>
+
+
+        <div class="decoupling">
+
+            <div>
+                <strong>Without queue</strong>
+                <p>
+                    Sensor → Processor
+                </p>
+                <small>
+                    Tight dependency
+                </small>
+            </div>
+
+            <div class="decoupling-arrow">
+                VS
+            </div>
+
+            <div>
+                <strong>With queue</strong>
+                <p>
+                    Sensor → SQS → Processor
+                </p>
+                <small>
+                    Decoupled architecture
+                </small>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="scenario-card">
+
+        <h2>🚨 Failure Scenario</h2>
+
+        <p>
+            Suppose 3,000 smart meters suddenly send readings
+            during a system restart.
+        </p>
+
+        <div class="scenario-options">
+
+            <div>
+                <strong>IoT Core</strong>
+                <p>
+                    Receives device messages.
+                </p>
+            </div>
+
+            <div>
+                <strong>SQS</strong>
+                <p>
+                    Buffers messages.
+                </p>
+            </div>
+
+            <div>
+                <strong>Lambda</strong>
+                <p>
+                    Processes messages.
+                </p>
+            </div>
+
+            <div>
+                <strong>S3</strong>
+                <p>
+                    Stores data.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="quiz-card">
+
+        <div class="quiz-title">
+            📝 Architecture Check
+        </div>
+
+        <p>
+            Which flow best represents this workshop?
+        </p>
+
+        <button class="quiz-option"
+                data-answer="correct">
+
+            Sensor → MQTT → IoT Core → SQS → Lambda →
+            S3 / CloudWatch / SNS
+
+        </button>
+
+        <button class="quiz-option"
+                data-answer="wrong">
+
+            Sensor → S3 → resistor
+
+        </button>
+
+        <button class="quiz-option"
+                data-answer="wrong">
+
+            Sensor → EC2 only
+
+        </button>
+
+        <div class="quiz-result"></div>
+
+    </div>
+
+
+    <div class="lesson-end">
+
+        <span>MODULE 10 COMPLETE</span>
+
+        <button class="next-module">
+            Continue to Module 11 →
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     MODULE 11 — CAPSTONE
+========================================================= -->
+
+<section class="module" data-module="10">
+
+    <div class="module-header">
+
+        <div class="module-number">MODULE 11</div>
+
+        <h1>EEE Cloud Capstone</h1>
+
+        <p class="module-intro">
+            You are now the engineer. Choose an engineering problem,
+            select sensors and build a cloud architecture using the
+            AWS services learned in this workshop.
+        </p>
+
+    </div>
+
+
+    <div class="capstone-intro">
+
+        <div class="capstone-icon">
+            🚀
+        </div>
+
+    <!-- UNIVERSAL SERVICE OVERVIEW & THEORY CARD -->
+    <div class="service-overview-card">
+        <div class="overview-header">
+            <div class="service-icon-badge">🏆</div>
+            <div>
+                <span class="overview-tag">MODULE 11 — EEE CLOUD CAPSTONE THEORY</span>
+                <h2>EEE Cloud Solutions Architecture Challenge</h2>
+            </div>
+        </div>
+
+        <div class="overview-section">
+            <h3>💡 What is this service? (In Plain English)</h3>
+            <p>The Capstone Project puts everything into practice! Select a real-world electrical or electronics engineering challenge (Smart Grid, Solar PV Monitoring, EV Charging Infrastructure, or Substation Automation), architect the complete AWS cloud pipeline, and present your solution.</p>
+        </div>
+
+        <div class="overview-grid">
+            <div class="overview-box use-case">
+                <h4>🎯 Why Use It? (Key Benefits)</h4>
+                <ul>
+                    <li><strong>Practical Skills Validation:</strong> Build and configure real AWS cloud resources for a complete engineering scenario.</li><li><strong>Architecture Design Mastery:</strong> Demonstrate how to select the right compute, storage, queuing, and alerting services for specific physical constraints.</li><li><strong>Enterprise Preparation:</strong> Prepares electrical and electronics engineers for industry deployments in IoT, Smart Energy, and Cloud SCADA.</li>
+                </ul>
+            </div>
+
+            <div class="overview-box vs-traditional">
+                <h4>🏭 Traditional vs Cloud Solution</h4>
+                <div class="vs-comparison">
+                    <div class="vs-item old">
+                        <strong>Traditional EEE:</strong> Theoretical textbook exercises without practical cloud exposure.
+                    </div>
+                    <div class="vs-item new">
+                        <strong>With AWS:</strong> Hands-on architectural design and implementation of production-grade cloud telemetry pipelines.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="engineering-example-card">
+            <div class="example-badge">⚡ Real-World EEE Application</div>
+            <p>Designing an automated EV Fast-Charging Station monitoring system that tracks battery charging rates, detects thermal runaway risks, alerts grid operators via SNS, and logs billing telemetry to S3.</p>
+        </div>
+
+        <div class="concepts-pills">
+            <h4>🔑 Key Concepts You Need To Know:</h4>
+            <div class="pills-container">
+                <div class="pill"><strong>Problem Statement:</strong> Defining the physical engineering challenge and telemetry requirements.</div><div class="pill"><strong>Architecture Blueprint:</strong> Selecting and interconnecting AWS services (IoT Core, SQS, Lambda, S3, SNS, CloudWatch, EC2).</div><div class="pill"><strong>Solution Pitch:</strong> Communicating the engineering benefits, cost efficiency, and fault tolerance of your cloud design.</div>
+            </div>
+        </div>
+    </div>
+
+
+
+        <div>
+
+            <h2>Your Challenge</h2>
+
+            <p>
+                Design a small AWS-powered solution for a real
+                electrical/electronics problem.
+            </p>
+
+            <p>
+                You do not need to build every physical component.
+                Your goal is to explain how the complete system
+                would work.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- PROBLEM -->
+
+    <div class="builder-section">
+
+        <div class="builder-number">
+            01
+        </div>
+
+        <div>
+
+            <h2>Select an Engineering Problem</h2>
+
+            <p>
+                Choose the problem you want your cloud system to solve.
+            </p>
+
+
+            <div class="choice-grid"
+                 data-group="problem">
+
+                <button class="choice-card"
+                        data-value="Transformer monitoring">
+
+                    ⚡
+                    <strong>Transformer Monitoring</strong>
+                    <small>
+                        Detect temperature/current abnormalities.
+                    </small>
+
+                </button>
+
+
+                <button class="choice-card"
+                        data-value="Energy monitoring">
+
+                    🔌
+                    <strong>Energy Monitoring</strong>
+                    <small>
+                        Track electricity usage and power.
+                    </small>
+
+                </button>
+
+
+                <button class="choice-card"
+                        data-value="EV battery monitoring">
+
+                    🔋
+                    <strong>EV Battery Monitoring</strong>
+                    <small>
+                        Monitor voltage/current/temperature.
+                    </small>
+
+                </button>
+
+
+                <button class="choice-card"
+                        data-value="Industrial motor monitoring">
+
+                    🏭
+                    <strong>Motor Monitoring</strong>
+                    <small>
+                        Detect vibration and thermal problems.
+                    </small>
+
+                </button>
+
+
+                <button class="choice-card"
+                        data-value="Solar plant monitoring">
+
+                    ☀️
+                    <strong>Solar Monitoring</strong>
+                    <small>
+                        Monitor renewable generation.
+                    </small>
+
+                </button>
+
+
+                <button class="choice-card"
+                        data-value="Smart building">
+
+                    🏠
+                    <strong>Smart Building</strong>
+                    <small>
+                        Monitor energy and environment.
+                    </small>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- SENSORS -->
+
+    <div class="builder-section">
+
+        <div class="builder-number">
+            02
+        </div>
+
+        <div>
+
+            <h2>Select Sensors / Telemetry</h2>
+
+            <p>
+                Choose the data your system needs.
+            </p>
+
+
+            <div class="choice-grid"
+                 data-group="sensor">
+
+                <button class="choice-card"
+                        data-value="Voltage">
+
+                    ⚡
+                    <strong>Voltage</strong>
+                    <small>V</small>
+
+                </button>
+
+                <button class="choice-card"
+                        data-value="Current">
+
+                    🔌
+                    <strong>Current</strong>
+                    <small>A</small>
+
+                </button>
+
+                <button class="choice-card"
+                        data-value="Temperature">
+
+                    🌡️
+                    <strong>Temperature</strong>
+                    <small>°C</small>
+
+                </button>
+
+                <button class="choice-card"
+                        data-value="Vibration">
+
+                    📳
+                    <strong>Vibration</strong>
+                    <small>Machine health</small>
+
+                </button>
+
+                <button class="choice-card"
+                        data-value="Energy">
+
+                    📊
+                    <strong>Energy</strong>
+                    <small>kWh</small>
+
+                </button>
+
+                <button class="choice-card"
+                        data-value="Power factor">
+
+                    ⚙️
+                    <strong>Power Factor</strong>
+                    <small>PF</small>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- PROCESSING -->
+
+    <div class="builder-section">
+
+        <div class="builder-number">
+            03
+        </div>
+
+        <div>
+
+            <h2>Choose Processing</h2>
+
+            <div class="choice-grid"
+                 data-group="processing">
+
+                <button class="choice-card"
+                        data-value="AWS Lambda">
+
+                    ⚙️
+                    <strong>AWS Lambda</strong>
+                    <small>
+                        Event-driven processing
+                    </small>
+
+                </button>
+
+
+                <button class="choice-card"
+                        data-value="Amazon EC2">
+
+                    🖥️
+                    <strong>Amazon EC2</strong>
+                    <small>
+                        Virtual server environment
+                    </small>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- STORAGE -->
+
+    <div class="builder-section">
+
+        <div class="builder-number">
+            04
+        </div>
+
+        <div>
+
+            <h2>Choose Storage</h2>
+
+            <div class="choice-grid"
+                 data-group="storage">
+
+                <button class="choice-card"
+                        data-value="Amazon S3">
+
+                    🗄️
+                    <strong>Amazon S3</strong>
+                    <small>
+                        Store telemetry files/reports
+                    </small>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ALERT -->
+
+    <div class="builder-section">
+
+        <div class="builder-number">
+            05
+        </div>
+
+        <div>
+
+            <h2>Choose Alerting</h2>
+
+            <div class="choice-grid"
+                 data-group="alert">
+
+                <button class="choice-card"
+                        data-value="Amazon SNS">
+
+                    🔔
+                    <strong>Amazon SNS</strong>
+                    <small>
+                        Notify engineering users
+                    </small>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- GENERATOR -->
+
+    <div class="generated-solution">
+
+        <div class="generated-header">
+
+            <span>GENERATED ARCHITECTURE</span>
+
+            <button id="generateBtn">
+                Generate Solution
+            </button>
+
+        </div>
+
+
+        <div id="solutionOutput">
+
+            <div class="empty-solution">
+
+                <div>🧩</div>
+
+                <h3>Build your solution</h3>
+
+                <p>
+                    Select your engineering problem, sensors and
+                    AWS services above.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- PITCH -->
+
+    <div class="pitch-card">
+
+        <h2>🎤 60-Second Pitch</h2>
+
+        <p>
+            Use this structure when presenting your solution:
+        </p>
+
+
+        <div class="pitch-structure">
+
+            <div>
+                <strong>1. Problem</strong>
+                <p>
+                    “Our engineering problem is...”
+                </p>
+            </div>
+
+            <div>
+                <strong>2. Data</strong>
+                <p>
+                    “We collect...”
+                </p>
+            </div>
+
+            <div>
+                <strong>3. Cloud</strong>
+                <p>
+                    “We send the data to AWS using...”
+                </p>
+            </div>
+
+            <div>
+                <strong>4. Processing</strong>
+                <p>
+                    “The data is processed using...”
+                </p>
+            </div>
+
+            <div>
+                <strong>5. Action</strong>
+                <p>
+                    “If an abnormal condition occurs...”
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- FINAL CHECK -->
+
+    <div class="final-check">
+
+        <h2>🏁 Final Knowledge Check</h2>
+
+        <div class="final-question">
+
+            <p>
+                1. Which service connects devices to AWS?
+            </p>
+
+            <button class="final-answer"
+                    data-correct="true">
+                AWS IoT Core
+            </button>
+
+            <button class="final-answer">
+                S3
+            </button>
+
+            <button class="final-answer">
+                EC2
+            </button>
+
+        </div>
+
+
+        <div class="final-question">
+
+            <p>
+                2. Which service buffers messages?
+            </p>
+
+            <button class="final-answer">
+                SNS
+            </button>
+
+            <button class="final-answer"
+                    data-correct="true">
+                SQS
+            </button>
+
+            <button class="final-answer">
+                S3
+            </button>
+
+        </div>
+
+
+        <div class="final-question">
+
+            <p>
+                3. Which service is event-driven serverless compute?
+            </p>
+
+            <button class="final-answer"
+                    data-correct="true">
+                Lambda
+            </button>
+
+            <button class="final-answer">
+                S3
+            </button>
+
+            <button class="final-answer">
+                MQTT
+            </button>
+
+        </div>
+
+
+        <div class="final-question">
+
+            <p>
+                4. Which service is object storage?
+            </p>
+
+            <button class="final-answer">
+                SQS
+            </button>
+
+            <button class="final-answer"
+                    data-correct="true">
+                S3
+            </button>
+
+            <button class="final-answer">
+                Lambda
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div class="completion">
+
+        <div class="completion-icon">
+            ✓
+        </div>
+
+        <h2>AWS × EEE Workshop</h2>
+
+        <p>
+            From engineering measurements to cloud-powered
+            solutions.
+        </p>
+
+        <strong>
+            You now have the architecture vocabulary to start
+            designing your own AWS × EEE system.
         </strong>
-      </div>
-
-      <button
-        class="reset-btn"
-        id="resetBtn">
-        Reset Progress
-      </button>
-
-    </header>
-
-
-    <!-- HERO -->
-
-    <section
-      class="hero"
-      id="hero">
-    </section>
-
-
-    <!-- COURSE CONTENT -->
-
-    <section id="courseContent"></section>
-
-
-    <!-- NAVIGATION -->
-
-    <div class="course-navigation">
-
-      <button
-        id="previousBtn"
-        class="previous-btn">
-
-        ← Previous
-
-      </button>
-
-      <div id="pageNumber">
-        Module 1
-      </div>
-
-      <button
-        id="nextBtn"
-        class="next-btn">
-
-        Next →
-
-      </button>
 
     </div>
 
-  </main>
+</section>
+
+
+    </div>
+
+</main>
+
+
+<!-- =========================================================
+     SEARCH MODAL
+========================================================= -->
+
+<div class="search-modal" id="searchModal">
+
+    <div class="search-window">
+
+        <button id="closeSearch" class="close-btn">
+            ×
+        </button>
+
+        <h2>Search Workshop</h2>
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search IoT, MQTT, Lambda, S3..."
+        >
+
+        <div id="searchResults"></div>
+
+    </div>
 
 </div>
+
+
+<!-- =========================================================
+     IMAGE MODAL
+========================================================= -->
+
+<div class="image-modal" id="imageModal">
+
+    <button id="closeImage" class="close-image">
+        ×
+    </button>
+
+    <img id="largeImage" src="" alt="AWS reference">
+
+</div>
+
 
 <script src="script.js"></script>
 
